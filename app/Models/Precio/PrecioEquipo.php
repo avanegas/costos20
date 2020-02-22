@@ -3,9 +3,12 @@
 namespace App\Models\Precio;
 
 use Illuminate\Database\Eloquent\Model;
+use \App\Presenters\DatePresenter;
 
 class PrecioEquipo extends Model
 {
+    use DatePresenter;
+
 	protected $fillable = [
 		'equipo_id', 'name', 'tarifa', 'cantidad', 'rendimiento', 'total'
 	];
@@ -32,5 +35,5 @@ class PrecioEquipo extends Model
 			'rendimiento' 	=> 0,
 			'total' 		=> 0
 		];
-	}    
+	}
 }

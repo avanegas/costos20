@@ -3,11 +3,14 @@
 namespace App\Models\Post;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Presenters\DatePresenter;
 use App\Image;
 use App\User;
 
 class Post extends Model
 {
+    use DatePresenter;
+
     protected $fillable = [
         'user_id', 'category_id', 'name', 'slug', 'excerpt', 'body', 'status'
         ];

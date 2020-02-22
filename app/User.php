@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
-
+use \App\Presenters\DatePresenter;
 use App\Models\Proyecto\ProyectoRubro;
 use App\Models\Proyecto\Proyecto;
 use App\Models\Precio\Precio;
@@ -17,6 +17,8 @@ use App\Zona;
 
 class User extends Authenticatable
 {
+    use DatePresenter;
+
     use Notifiable, HasRoles;
 
     protected $fillable = [

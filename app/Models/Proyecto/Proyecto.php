@@ -3,10 +3,13 @@
 namespace App\Models\Proyecto;
 
 use Illuminate\Database\Eloquent\Model;
+use \App\Presenters\DatePresenter;
 use App\User;
 
 class Proyecto extends Model
 {
+    use DatePresenter;
+
 	protected $fillable = [
 		'name', 'contratante', 'ubicacion', 'oferente', 'entrega', 'referencial', 'indirecto', 'descuento',
 		'distancia', 'sub_total', 'gran_total', 'formato', 'precision', 'representante'

@@ -3,9 +3,12 @@
 namespace App\Models\Data;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Presenters\DatePresenter;
 
 class Material extends Model
 {
+    use DatePresenter;
+
 	protected $fillable = [
 		'grupo_material_id', 'name', 'unidad', 'precio'
 	];

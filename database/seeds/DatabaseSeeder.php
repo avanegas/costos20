@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder
         $profile->location()->save(factory(App\Location::class)->make());
         $user->groups()->attach($this->array(rand(1,7)));
         $user->image()->save(factory(App\Image::class)->make([
-            'url' => 'persona0.jpg'
+            'url' => 'persona-00.jpg'
         ]));
 
         $users = factory(App\User::class,9)->create();
@@ -91,9 +91,57 @@ class DatabaseSeeder extends Seeder
                 'url' => 'profile.png'
             ]));
         }
+        // Category
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Arquitectura', 'slug' => 'arquitectura', 'body' => 'Criterios y fundamentos arquitectónicos. ']);
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Ingenieria', 'slug' => 'ingenieria', 'body' => 'Principios y fundamentos de ingeniería.']);
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Diseño arquitectónico', 'slug' => 'diseno-arquitectonico', 'body' => 'Diseño arquitectónico.']);
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Diseño estructural', 'slug' => 'diseno-estructural', 'body' => 'Diseño estructural.']);
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Procesos constructivos', 'slug' => 'procesos-constructivos', 'body' => 'Procesos constructivos.']);
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Biblioteca', 'slug' => 'biblioteca', 'body' => 'Artículos del área de la construccion, biblioteca básica.']);
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Materiales de construcción', 'slug' => 'materiales-de-construccion', 'body' => 'Materiales para la construcción de obras de ingeniería civil.']);
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Diseño eléctrico y electrónico', 'slug' => 'diseño-electrico-y-electronico', 'body' => 'Diseño eléctrico, electrónico, ambiental, redes, y más.']);
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Materiales para acabados con Madera, Hierro y aluminio, etc.', 'slug' => 'materiales-para-acabados-de-madera-Hierro-y-aluminio', 'body' => 'Material para acabados de techos, jardines y exteriores.']);
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Diseño hidráulico y sanitario', 'slug' => 'diseno-hidraulico-y-sanitario', 'body' => 'Diseño hidráulico y sanitario']);
+        factory(App\Models\Post\Category::class)->create(['name'  => 'Material para acabados de pisos y paredes', 'slug' => 'material-para-acabados-de-pisos-y-paredes', 'body' => 'Material para acabados de pisos y paredes']);
+        //factory(App\Models\Post\Category::class, 10)->create();
 
-        factory(App\Models\Post\Category::class, 10)->create();
-        factory(App\Models\Post\Tag::class, 20)->create();
+        // Tag
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Arquitectura', 'slug' => 'arquitectura']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Ingeniería', 'slug' => 'ingenieria']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Costo', 'slug' => 'costo']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Valor', 'slug' => 'valor']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Diseño', 'slug' => 'diseno']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Madera', 'slug' => 'madera']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Acero de refuerzo', 'slug' => 'acer-de-refuerzo']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Cemento', 'slug' => 'cemento']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Hormigón', 'slug' => 'hormigon']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Arena', 'slug' => 'arena']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Grava', 'slug' => 'grava']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Agua', 'slug' => 'agua']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Mano de obra', 'slug' => 'mano-de-obra']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Reajuste de precios', 'slug' => 'reajuste-de-precios']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Hidráulico', 'slug' => 'hidraulico']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Sanitario', 'slug' => 'sanitario']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Mortero', 'slug' => 'mortero']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Hierro', 'slug' => 'hierro']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Suelda', 'slug' => 'suelda']);
+        factory(App\Models\Post\Tag::class)->create(['name'  => 'Aluminio', 'slug' => 'aluminio']);
+        //factory(App\Models\Post\Tag::class, 20)->create();
+
+        // Ofertas
+        factory(App\Models\Oferta\Oferta::class)->create([
+            'user_id'   => 1,
+            'name'      => 'Motor de impresora',
+            'slug'      => 'motor-de-impresora',
+            'unidad'    => 'u',
+            'descripcion' => 'Lo mejor de lo mejor',
+            'stock'     => '4',
+            'precio'    => '150.60',
+            'file'      => 'caracteristicas.txt',
+            'status'    => TRUE,
+            ])->each(function($oferta){
+                $oferta->image()->save(factory(App\Image::class)->make(['url' => 'oferta1.jpg']));
+            });
 
         factory(App\Models\Post\Post::class, 40)->create()->each(function ($post) {
 

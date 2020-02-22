@@ -3,10 +3,13 @@
 namespace App\Models\Data;
 
 use Illuminate\Database\Eloquent\Model;
+use \App\Presenters\DatePresenter;
 use App\Zona;
 
 class Transporte extends Model
 {
+    use DatePresenter;
+
 	protected $fillable = [
 		'zona_id', 'name', 'unidad', 'tipo', 'tarifa'
 	];

@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use \App\Presenters\DatePresenter;
 
 class Profile extends Model
 {
+    use DatePresenter;
+
     protected $fillable = [
         'user_id', 'bio', 'phone', 'twitter_username', 'github_username', 'avatar_status', 'status', 'activated',
     ];

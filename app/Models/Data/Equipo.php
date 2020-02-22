@@ -3,9 +3,12 @@
 namespace App\Models\Data;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Presenters\DatePresenter;
 
 class Equipo extends Model
 {
+    use DatePresenter;
+
 	protected $fillable = [
 		'grupo_equipo_id', 'name', 'marca', 'tipo', 'tarifa'
 	];

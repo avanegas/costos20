@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use \App\Presenters\DatePresenter;
 use App\Models\Data\GrupoEquipo;
 use App\Models\Data\GrupoMaterial;
 use App\Models\Data\GrupoObrero;
@@ -11,6 +12,8 @@ use App\Models\Data\Transporte;
 
 class Zona extends Model
 {
+  use DatePresenter;
+
   protected $fillable = [
     'name', 'description', 'user_id'
   ];

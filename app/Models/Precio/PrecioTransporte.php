@@ -3,9 +3,12 @@
 namespace App\Models\Precio;
 
 use Illuminate\Database\Eloquent\Model;
+use \App\Presenters\DatePresenter;
 
 class PrecioTransporte extends Model
 {
+    use DatePresenter;
+
 	protected $fillable = [
 		'transporte_id', 'name', 'unidad', 'tarifa', 'cantidad', 'distancia', 'total'
 	];

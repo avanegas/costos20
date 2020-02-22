@@ -3,11 +3,14 @@
 namespace App\Models\Precio;
 
 use Illuminate\Database\Eloquent\Model;
+use \App\Presenters\DatePresenter;
 use App\Models\Precio\Equipo;
 use App\Zona;
 
 class GrupoPrecio extends Model
 {
+    use DatePresenter;
+
 	protected $fillable = [
 		'zona_id', 'name', 'description'
 	];
