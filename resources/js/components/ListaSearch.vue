@@ -97,14 +97,14 @@
                     <!--                                <img :src="`../images/${filteredData[i].image.url}`" width="75px" class="img-thumbnail">-->
                     <!--                            </span>-->
                     <!--                        </template>-->
-                    <template v-if="lista === 'ofertas'">
-                            <span>
-                                <img :src="`../images/${filteredData[i].image.url}`" width="75px" class="img-thumbnail">
-                            </span>
-                    </template>
-                    <template v-else>
+                    <!--<template v-if="lista === 'ofertas'">-->
+                    <!--        <span>-->
+                    <!--            <img :src="`../images/${filteredData[i].image.url}`" width="75px" class="img-thumbnail">-->
+                    <!--        </span>-->
+                    <!--</template>-->
+                    <!--<template v-else>-->
                         {{entry[key]}}
-                    </template>
+                    <!--</template>-->
                 </template>
 
                 <template v-else>

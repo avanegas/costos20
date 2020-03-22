@@ -9,7 +9,7 @@
                     </router-link>
                 </div>
                 <div class="card-body">
-                    <img :src="`/images/${post.image.url}`" v-if="post.image.url" class="card-img-topcard">
+                    <img v-if="post.image.url" :src="`/images/${post.image.url}`" class="card-img-top">
                     <p class="card-title text-uppercase text-center">{{post.name}}</p>
                     <p class="card-text text-justify">{{ post.body }}</p>
 
@@ -58,20 +58,13 @@
                 authState: Auth.state,
                 form: {},
                 post: {
-                    comments: {
-                        user: {},
-                        image: {}
-                    },
-                    user: {},
-                    image: {},
-                    category: {},
-                    tags: {}
                 }
             }
         },
         created() {
             get(`/api/post/${this.$route.params.slug}`)
                 .then((res) => {
+                    console.log(res.data.post);
                     this.post = res.data.post
                 })
         },

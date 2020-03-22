@@ -58,18 +58,13 @@
         data() {
             return {
                 authState: Auth.state,
-                profile: {
-                    location: {},
-                    user:{
-                        image: {},
-                        groups:{}
-                    }
-                }
+                profile: {}
             }
         },
         created() {
             get(`/api/profiles/${this.$route.params.id}`)
                 .then((res) => {
+                    console.log(res.data.profile);
                     this.profile = res.data.profile
                 })
         }

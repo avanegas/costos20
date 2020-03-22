@@ -29,7 +29,7 @@ class PostController extends Controller
     */
     public function index()
     {
-        $posts = Post::with(['user','category', 'image'])->orderBy('created_at', 'DESC')->get();
+        $posts = Post::with(['user','category', 'image'])->orderBy('created_at', 'desc')->get();
 
         return response()
             ->json([

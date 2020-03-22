@@ -18,7 +18,7 @@
 			<div class="is-flex">
 				<div class="col-md-4 item" v-for="oferta in ofertas" :key="oferta.id">
 					<div class="thumbnail">
-						<img :src="`images/${oferta.file}`" v-if="oferta.file" alt class="hvr-grow thumbnail-image">
+						<img v-if="oferta.image.url" :src="`/images/${oferta.image.url}`" alt class="hvr-grow thumbnail-image">
 						<div class="caption margin-left-sm">
 							<h4 class="pull-right">$ {{ oferta.precio }}</h4>
 							<h4 class="">
@@ -41,6 +41,7 @@
 </template>
 <script type="text/javascript">
 	import { get } from '../../helpers/api'
+
 	export default {
 		data() {
 			return {

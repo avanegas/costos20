@@ -24,7 +24,7 @@ class OfertaController extends Controller
     */
     public function index()
     {
-        $ofertas = Oferta::with(['user'])->orderBy('updated_at', 'desc')->get();
+        $ofertas = Oferta::with(['user', 'image'])->orderBy('created_at', 'desc')->get();
 
         return response()
             ->json(['ofertas' => $ofertas]);

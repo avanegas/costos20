@@ -145,7 +145,7 @@ class PageController extends Controller
 
     public function oferta()
     {
-        $ofertas = Oferta::where('status', 'PUBLISHED')->with(['user'])->orderBy('updated_at', 'desc')->get();
+        $ofertas = Oferta::where('status', 'PUBLISHED')->with(['user', 'image'])->orderBy('updated_at', 'desc')->get();
 
         return response()
             ->json([

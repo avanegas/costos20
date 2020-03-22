@@ -7365,19 +7365,14 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       authState: _store_auth__WEBPACK_IMPORTED_MODULE_0__["default"].state,
-      profile: {
-        location: {},
-        user: {
-          image: {},
-          groups: {}
-        }
-      }
+      profile: {}
     };
   },
   created: function created() {
     var _this = this;
 
     Object(_helpers_api__WEBPACK_IMPORTED_MODULE_1__["get"])("/api/profiles/".concat(this.$route.params.id)).then(function (res) {
+      console.log(res.data.profile);
       _this.profile = res.data.profile;
     });
   }
@@ -8632,22 +8627,14 @@ __webpack_require__.r(__webpack_exports__);
     return {
       authState: _store_auth__WEBPACK_IMPORTED_MODULE_0__["default"].state,
       form: {},
-      post: {
-        comments: {
-          user: {},
-          image: {}
-        },
-        user: {},
-        image: {},
-        category: {},
-        tags: {}
-      }
+      post: {}
     };
   },
   created: function created() {
     var _this = this;
 
     Object(_helpers_api__WEBPACK_IMPORTED_MODULE_2__["get"])("/api/post/".concat(this.$route.params.slug)).then(function (res) {
+      console.log(res.data.post);
       _this.post = res.data.post;
     });
   },
@@ -45912,27 +45899,11 @@ var render = function() {
                     ]
                   : index === 2
                   ? [
-                      _vm.lista === "ofertas"
-                        ? [
-                            _c("span", [
-                              _c("img", {
-                                staticClass: "img-thumbnail",
-                                attrs: {
-                                  src:
-                                    "../images/" +
-                                    _vm.filteredData[i].image.url,
-                                  width: "75px"
-                                }
-                              })
-                            ])
-                          ]
-                        : [
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(entry[key]) +
-                                "\n                "
-                            )
-                          ]
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(entry[key]) +
+                          "\n                "
+                      )
                     ]
                   : [
                       _vm._v(
@@ -47841,7 +47812,7 @@ var render = function() {
         _c("img", {
           staticClass: "d-flex align-self-start mr-3 rounded-circle",
           attrs: {
-            src: "/images/" + _vm.comment.user.image.url,
+            src: "../images/" + _vm.comment.user.image.url,
             width: "64",
             height: "64",
             alt: ""
@@ -54096,14 +54067,14 @@ var render = function() {
                                 ? _c("img", {
                                     staticClass: "user-avatar",
                                     attrs: {
-                                      src: "/images/" + _vm.form.avatar,
+                                      src: "/images/" + _vm.form.image.url,
                                       alt: "avatar"
                                     }
                                   })
                                 : _c("img", {
                                     staticClass: "user-avatar",
                                     attrs: {
-                                      src: "/images/persona1.jpg",
+                                      src: "/images/profile.png",
                                       alt: "avatar"
                                     }
                                   }),
@@ -56388,7 +56359,9 @@ var render = function() {
                 _vm._v(
                   "Tema creado por, " + _vm._s(post.user.name) + ", el día"
                 ),
-                _c("em", [_vm._v(" " + _vm._s(post.created_at) + ".")])
+                _c("em", [
+                  _vm._v(" formatLocalized(" + _vm._s(post.created_at) + ").")
+                ])
               ])
             ]),
             _vm._v(" "),
@@ -56511,10 +56484,10 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              post.file
+              post.image.url
                 ? _c("img", {
                     staticClass: "card-img-top",
-                    attrs: { src: "../images/" + post.file }
+                    attrs: { src: "../images/" + post.image.url }
                   })
                 : _vm._e(),
               _vm._v(" "),
@@ -56942,10 +56915,10 @@ var render = function() {
         _vm._l(_vm.ofertas, function(oferta) {
           return _c("div", { key: oferta.id, staticClass: "col-md-4 item" }, [
             _c("div", { staticClass: "thumbnail" }, [
-              oferta.file
+              oferta.image.url
                 ? _c("img", {
                     staticClass: "hvr-grow thumbnail-image",
-                    attrs: { src: "images/" + oferta.file, alt: "" }
+                    attrs: { src: "/images/" + oferta.image.url, alt: "" }
                   })
                 : _vm._e(),
               _vm._v(" "),
@@ -57080,7 +57053,7 @@ var render = function() {
         _c("div", { staticClass: "card-body" }, [
           _vm.post.image.url
             ? _c("img", {
-                staticClass: "card-img-topcard",
+                staticClass: "card-img-top",
                 attrs: { src: "/images/" + _vm.post.image.url }
               })
             : _vm._e(),
@@ -57413,10 +57386,10 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              post.file
+              post.image.url
                 ? _c("img", {
                     staticClass: "card-img-top",
-                    attrs: { src: "../images/" + post.file }
+                    attrs: { src: "../images/" + post.image.url }
                   })
                 : _vm._e(),
               _vm._v(" "),

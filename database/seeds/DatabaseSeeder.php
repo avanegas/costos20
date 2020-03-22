@@ -132,7 +132,6 @@ class DatabaseSeeder extends Seeder
         factory(App\Models\Oferta\Oferta::class)->create([
             'user_id'   => 1,
             'name'      => 'Motor de impresora',
-            'slug'      => 'motor-de-impresora',
             'unidad'    => 'u',
             'descripcion' => 'Lo mejor de lo mejor',
             'stock'     => '4',

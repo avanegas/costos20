@@ -31,7 +31,6 @@ Route::resource('roles', 		'Admin\RoleController');
 Route::resource('permissions', 	'Admin\PermissionController');
 
 
-
 Route::resource('grupo_equipos',	'Data\GrupoEquipoController');
 Route::resource('equipos',			'Data\EquipoController');
 Route::resource('grupo_materials', 	'Data\GrupoMaterialController');

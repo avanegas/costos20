@@ -2,9 +2,11 @@
 
 namespace App\Models\Oferta;
 
+
 use Illuminate\Database\Eloquent\Model;
 use \App\Presenters\DatePresenter;
 use App\User;
+use App\Image;
 
 class Oferta extends Model
 {
@@ -17,6 +19,11 @@ class Oferta extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
     }
 
     public static function form()

@@ -17,7 +17,7 @@
                     <p>Tema creado por, {{post.user.name}}, el día<em> formatLocalized({{post.created_at}}).</em></p>
                 </div>
                 <div class="card-body">
-                    <img :src="`images/${post.image.url}`" v-if="post.image.url" class="card-img-top">
+                    <img v-if="post.image.url" :src="`images/${post.image.url}`" class="card-img-top">
                     <p class="card-title">CATEGORIA: {{post.category.name}}</p>
                     <p class="text-uppercase text-center">{{post.name}}</p>
                     <p class="card-text text-justify">{{post.excerpt}}

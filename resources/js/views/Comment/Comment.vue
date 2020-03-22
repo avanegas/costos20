@@ -2,7 +2,7 @@
     <div class="card-body media" >
         <div class="foto">
             <a class="pull-left" href="#">
-                <img :src="`/images/${comment.user.image.url}`" width="64" height="64" alt="" class="d-flex align-self-start mr-3 rounded-circle">
+                <img :src="`../images/${comment.user.image.url}`" width="64" height="64" alt="" class="d-flex align-self-start mr-3 rounded-circle">
             </a>
         </div>
         <div class="media-body">

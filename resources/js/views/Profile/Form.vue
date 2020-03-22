@@ -44,8 +44,8 @@
                                                 <div class="card-body">
 
                                                     <div class="border" >
-                                                        <img :src="`/images/${form.avatar}`" alt="avatar" class="user-avatar" v-if="form.avatar_status === 1">
-                                                        <img :src="`/images/persona1.jpg`" alt="avatar" class="user-avatar" v-else>
+                                                        <img v-if="form.avatar_status === 1" :src="`/images/${form.image.url}`" alt="avatar" class="user-avatar">
+                                                        <img v-else :src="`/images/profile.png`" alt="avatar" class="user-avatar">
                                                         <div class="dz-default dz-message">
                                                             <span class="mb-2">Arrastre y suelte los archivos a subir aqui.</span>
                                                         </div>
