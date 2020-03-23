@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder
         $profile->location()->save(factory(App\Location::class)->make());
         $user->groups()->attach($this->array(rand(1,7)));
         $user->image()->save(factory(App\Image::class)->make([
-            'url' => 'persona-00.jpg'
+            'url' => 'persona-00.jpeg'
         ]));
 
         $users = factory(App\User::class,9)->create();
