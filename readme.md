@@ -1,4 +1,6 @@
 INFOasistencia: Costos de construcción.
  
-1. Fase de Post terrminada.
-2. Datos. Listado, Crear Actualizar Borrar 
+1. Revisar todo.
+2. Apuntes.
+  - Post, show, editar, gravar, borrar.
+     

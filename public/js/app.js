@@ -56359,9 +56359,7 @@ var render = function() {
                 _vm._v(
                   "Tema creado por, " + _vm._s(post.user.name) + ", el día"
                 ),
-                _c("em", [
-                  _vm._v(" formatLocalized(" + _vm._s(post.created_at) + ").")
-                ])
+                _c("em", [_vm._v(" " + _vm._s(post.created_at) + ".")])
               ])
             ]),
             _vm._v(" "),

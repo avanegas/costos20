@@ -14,7 +14,7 @@
             </div>
             <div class="card mb-3 mt-3" v-for="post in searchPosts" :key="post.id">
                 <div class="card-header">
-                    <p>Tema creado por, {{post.user.name}}, el día<em> formatLocalized({{post.created_at}}).</em></p>
+                    <p>Tema creado por, {{post.user.name}}, el día<em> {{post.created_at}}.</em></p>
                 </div>
                 <div class="card-body">
                     <img v-if="post.image.url" :src="`images/${post.image.url}`" class="card-img-top">
