@@ -34,7 +34,6 @@ class PermissionController extends Controller {
             ->json([
                 'roles' => $roles
             ]);
-        //return view('admin.permissions.create',compact('roles'));
     }
 
     public function store(Request $request)

@@ -33,18 +33,18 @@
                     <li class="nav-item dropdown" v-if="auth">
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Grupos</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown02">
-                            <router-link class="dropdown-item" to="/categories" >Categorías</router-link>
-                            <router-link class="dropdown-item" to="/tags">Etiquetas</router-link>
+                            <router-link class="dropdown-item" to="/zonas">Zonas</router-link>
                             <router-link class="dropdown-item" to="/grupo_equipos" >Grupo Equipos</router-link>
                             <router-link class="dropdown-item" to="/grupo_materials">Grupo Materiales</router-link>
                             <router-link class="dropdown-item" to="/grupo_obreros">Grupo Obreros</router-link>
                             <router-link class="dropdown-item" to="/grupo_precios">Grupo Precios</router-link>
-                            <router-link class="dropdown-item" to="/zonas">Zonas</router-link>
                         </div>
                     </li>
                     <li class="nav-item dropdown" v-if="auth">
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entradas</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown03">
+                            <router-link class="dropdown-item" to="/categories" >Categorías</router-link>
+                            <router-link class="dropdown-item" to="/tags">Etiquetas</router-link>
                             <router-link class="dropdown-item" :to="`/posts/${authState.user_id}`" >Artículos</router-link>
                             <router-link class="dropdown-item" :to="`/ofertas/${authState.user_id}`" >Ofertas</router-link>
                             <router-link class="dropdown-item" to="/servicios" >Servicios</router-link>
@@ -59,7 +59,7 @@
                     <li class="nav-item dropdown" v-if="auth">
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ authState.user_id }}</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <router-link class="dropdown-item" to="/users" v-if="auth" >Administrar</router-link>
+                            <router-link class="dropdown-item" to="/groups" v-if="auth" >Administrar</router-link>
                             <router-link class="dropdown-item" :to="`/profiles/${authState.user_id}`" v-if="auth" >Perfil</router-link>
                             <a class="dropdown-item" href="#" @click.stop="logout" v-if="auth">SALIR</a>
                         </div>

@@ -1,14 +1,18 @@
 <template>
     <div class="row">
         <div class="col-md">
-            <div class="card-body mb-3 mt-3">
-                <div class="row">
-                    <h5 class = "col-sm-5 col-md-10"><i class='fa fa-user-times'></i> Perfil de {{profile.user.name}}</h5>
-                    <router-link :to="`/profiles/${authState.user_id}/edit`" title="Editar Perfil" class="btn btn-primary float-right"> Editar</router-link>
-                    <a href="#" class="btn btn-secondary ml-1"> Regresar</a>
+            <div class="card mt-3">
+                <div class="card-header row m-0">
+                    <h5 class = "col-3"><i class='fa fa-user-times'></i> Perfil de {{profile.user.name}}</h5>
+                    <div class="form-group col-9">
+                        <router-link :to="`/profiles/${authState.user_id}/edit`" title="Editar Perfil" class="btn btn-primary btn-sm mr-1 float-right"> Editar</router-link>
+                        <button type="button" class="btn btn-secondary btn-sm mr-1 float-right" @click="$router.back()"
+                                :disabled="isProcessing">Cancel
+                        </button>
+                    </div>
                 </div>
-                <div class="card-block mt-2">
-                    <img :src="`/images/${profile.user.image.url}`" class="user-avatar mx-auto d-block">
+                <div class="card-body">
+                    <img v-if="profile.user.image.url" :src="`/images/${profile.user.image.url}`" class="user-avatar mx-auto d-block mt-1">
                     <dl class="user-info">
                         <div class="title">
                             <h5>{{profile.user.name}}</h5>
@@ -58,13 +62,18 @@
         data() {
             return {
                 authState: Auth.state,
-                profile: {}
+                profile: {
+                    user:{
+                        image:{}
+                    },
+                    location:{}
+                },
+                isProcessing: false,
             }
         },
         created() {
             get(`/api/profiles/${this.$route.params.id}`)
                 .then((res) => {
-                    console.log(res.data.profile);
                     this.profile = res.data.profile
                 })
         }

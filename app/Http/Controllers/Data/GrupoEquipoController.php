@@ -24,7 +24,9 @@ class GrupoEquipoController extends Controller
         $grupo_equipos = GrupoEquipo::with(['zona'])->orderBy('updated_at', 'desc')->get();
 
         return response()
-            ->json(['grupo_equipos' => $grupo_equipos]);
+            ->json([
+                'grupo_equipos' => $grupo_equipos
+            ]);
     }
 
     public function create()
@@ -56,7 +58,9 @@ class GrupoEquipoController extends Controller
         $form = GrupoEquipo::findOrFail($id);
 
         return response()
-                ->json(['form' => $form]);
+                ->json([
+                    'form' => $form
+                ]);
     }
 
     public function update(GrupoEquipoUpdateRequest $request, $id)
@@ -75,8 +79,10 @@ class GrupoEquipoController extends Controller
     public function destroy(Request $request, $id)
     {
         $grupo_equipo = GrupoEquipo::find($id)->delete();
-        
+
         return response()
-                ->json(['deleted' => true]);
+                ->json([
+                    'deleted' => true
+                ]);
     }
 }

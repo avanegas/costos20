@@ -46,7 +46,6 @@
 	import Flash from '../../../helpers/flash'
 	import { get, post, del } from '../../../helpers/api'
 	import { toMulipartedForm } from '../../../helpers/form'
-
 	export default {
 		data() {
 			return {

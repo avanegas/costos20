@@ -87,6 +87,9 @@ import ServicioForm from '../views/Servicio/Form.vue'
 import ZonaIndex from '../views/Zona/Index.vue'
 import ZonaForm from '../views/Zona/Form.vue'
 
+import GroupIndex from '../views/Group/Index.vue'
+import GroupForm from '../views/Group/Form.vue'
+
 import NotFound from '../views/NotFound.vue'
 
 Vue.use(VueRouter)
@@ -205,6 +208,10 @@ const router = new VueRouter({
         { path: '/zonas', component: ZonaIndex},
         { path: '/zonas/create', component: ZonaForm, meta: { mode: 'create' }},
         { path: '/zonas/:id/edit', component: ZonaForm, meta: { mode: 'edit' }},
+
+        { path: '/groups', component: GroupIndex},
+        { path: '/groups/create', component: GroupForm, meta: { mode: 'create' }},
+        { path: '/groups/:id/edit', component: GroupForm, meta: { mode: 'edit' }},
 
         { path: '/login', component: Login },
         { path: '/register', component: Register },

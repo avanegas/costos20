@@ -33,7 +33,7 @@ class ProfileUpdateRequest extends FormRequest
             //'group'      => 'required'
         ];
         if($this->get('url'))
-            $rules = array_merge($rules, ['avatar' => 'mimes:jpg,jpeg,png']);
+            $rules = array_merge($rules, ['url' => 'mimes:jpg,jpeg,png']);
         return $rules;
     }
 }

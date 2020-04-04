@@ -45,16 +45,14 @@ class ProfileController extends Controller
 
     public function edit(Request $request, $id)
     {
-        $form = Profile::where('user_id', $id)->with(['user', 'location'])->first();
-        $groups = Group::get();
-        $assignedGroups = $form->user->groups->pluck('id')->toArray();
+        $form = Profile::where('user_id', $id)->with(['user', 'location', 'user.groups', 'user.image'])->first();
+        $groups = Group::pluck('name', 'id');
         //$this->authorize('pass', $post);
 
         return response()
             ->json([
                 'form'           => $form,
-                'groups'         => $groups,
-                'assignedGroups' => $assignedGroups
+                'groups'         => $groups
             ]);
     }
 

@@ -72,6 +72,9 @@
                     <template v-else-if="lista === 'zonas'">
                         {{ filteredData[i].name }}
                     </template>
+                    <template v-else-if="lista === 'groups'">
+                        {{ filteredData[i].name }}
+                    </template>
                     <template v-else>
                         {{ filteredData[i].id }}
                     </template>
@@ -259,6 +262,10 @@
                             break;
                         }
                         case "zonas": {
+                            this.$router.push(`/${this.lista}/${entry['id']}/edit`);
+                            break;
+                        }
+                        case "groups": {
                             this.$router.push(`/${this.lista}/${entry['id']}/edit`);
                             break;
                         }

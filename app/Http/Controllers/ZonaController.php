@@ -20,7 +20,9 @@ class ZonaController extends Controller
         $zonas = Zona::orderBy('updated_at', 'desc')->get();
 
         return response()
-                ->json(['zonas' => $zonas]);
+                ->json([
+                    'zonas' => $zonas
+                ]);
     }
 
     public function create()
@@ -28,7 +30,9 @@ class ZonaController extends Controller
         $form = Zona::form();
 
         return response()
-                ->json(['form' => $form]);
+                ->json([
+                    'form' => $form
+                ]);
     }
 
     public function store(ZonaStoreRequest $request)
@@ -43,7 +47,7 @@ class ZonaController extends Controller
                     ]);
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $form = Zona::findOrFail($id);
 
@@ -64,10 +68,10 @@ class ZonaController extends Controller
                     ]);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $zona = Zona::find($id)->delete();
-        
+
         return response()
                 ->json(['deleted' => true]);
     }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ZonaStoreRequest extends FormRequest
+class GroupUpdateRequest extends FormRequest
 {
     public function authorize()
     {
@@ -14,9 +14,7 @@ class ZonaStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id'       => 'required',
-            'name'          => 'required',
-            'description'   => 'required',
+            'name' => 'required'
         ];
     }
 }

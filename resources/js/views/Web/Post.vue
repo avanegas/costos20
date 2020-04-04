@@ -58,13 +58,17 @@
                 authState: Auth.state,
                 form: {},
                 post: {
+                    category:{},
+                    image:{},
+                    tags:{},
+                    comments:{}
                 }
             }
         },
         created() {
             get(`/api/post/${this.$route.params.slug}`)
                 .then((res) => {
-                    console.log(res.data.post);
+
                     this.post = res.data.post
                 })
         },

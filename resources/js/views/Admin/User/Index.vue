@@ -4,9 +4,10 @@
             <div class="row m-0 mt-3">
                 <h5 class="col-6"><i class="fa fa-lock-open"></i> Administración</h5>
                 <div class="form-group col-6 mt-2 mb-0 p-0">
-                    <router-link to="/users" class="btn btn-secondary btn-sm mr-1 float-right"> Usuarios</router-link>
-                    <router-link to="/roles" class="btn btn-secondary btn-sm mr-1 float-right"> Roles</router-link>
-                    <router-link to="/permissions" class="btn btn-secondary btn-sm mr-1 float-right"> Permisos</router-link>
+                    <router-link to="/permissions"  class="btn btn-secondary btn-sm mr-1 float-right"> Permisos</router-link>
+                    <router-link to="/roles"        class="btn btn-secondary btn-sm mr-1 float-right"> Roles</router-link>
+                    <router-link to="/users"        class="btn btn-secondary btn-sm mr-1 float-right"> Usuarios</router-link>
+                    <router-link to="/groups"       class="btn btn-secondary btn-sm mr-1 float-right"> Actividad</router-link>
                 </div>
             </div>
             <div class="form-group row m-0 mt-2 mb-2">

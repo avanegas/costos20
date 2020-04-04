@@ -1,5 +1,5 @@
 <template>
-	<div class="row">
+    <div class="row">
         <div class="col-md">
             <div class="row m-0 mt-3">
                 <h5 class="col-6"><i class="fa fa-lock-open"></i> Administración</h5>
@@ -11,9 +11,9 @@
                 </div>
             </div>
             <div class="form-group row m-0 mt-2 mb-2">
-                <h5 class="col-6"><i class="fa fa-users"></i> Permisos</h5>
+                <h5 class="col-6"><i class="fa fa-users"></i> Grupos de Actividad</h5>
                 <div class="col-6 p-0">
-                    <router-link to="/permissions/create" class="btn btn-primary mr-1 float-right"> Nuevo</router-link>
+                    <router-link to="/groups/create" class="btn btn-primary mr-1 float-right"> Nuevo</router-link>
                     <input
                         type="search"
                         class="form-control col-8 mr-sm-2 mb-sm-0 mr-1 float-right"
@@ -37,8 +37,8 @@
     </div>
 </template>
 <script type="text/javascript">
-    import { get } from '../../../helpers/api'
-    import ListaSearch from '../../../components/ListaSearch.vue'
+    import { get } from '../../helpers/api'
+    import ListaSearch from '../../components/ListaSearch.vue'
     export default {
         components: {
             ListaSearch
@@ -48,15 +48,15 @@
                 searchQuery:'',
                 gridData: [],
                 gridColumns:['name'],
-                lista:'permissions',
+                lista:'groups',
                 isAutorized: false
             }
         },
         created() {
-            get(`../api/permissions`)
+            get(`../api/groups`)
                 .then((res) => {
                     //console.log(res);
-                    this.gridData = res.data.permissions
+                    this.gridData = res.data.groups
                 })
         }
     }
