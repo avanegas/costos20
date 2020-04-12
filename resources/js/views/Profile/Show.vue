@@ -3,8 +3,8 @@
         <div class="col-md">
             <div class="card mt-3">
                 <div class="card-header row m-0">
-                    <h5 class = "col-3"><i class='fa fa-user-times'></i> Perfil de {{profile.user.name}}</h5>
-                    <div class="form-group col-9">
+                    <h5 class = "col-5"><i class='fa fa-user-times'></i> Perfil de {{profile.user.name}}</h5>
+                    <div class="form-group col-7">
                         <router-link :to="`/profiles/${authState.user_id}/edit`" title="Editar Perfil" class="btn btn-primary btn-sm mr-1 float-right"> Editar</router-link>
                         <button type="button" class="btn btn-secondary btn-sm mr-1 float-right" @click="$router.back()"
                                 :disabled="isProcessing">Cancel

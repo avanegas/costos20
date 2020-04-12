@@ -24,6 +24,7 @@ use App\Models\Data\Transporte;
 use App\Models\Oferta\Oferta;
 
 use App\Zona;
+use App\Group;
 use App\User;
 
 
@@ -155,11 +156,9 @@ class PageController extends Controller
 
     public function servicio()
     {
-        $servicios = Servicio::with(['user'])->orderBy('name', 'desc')->get();
+        $servicios = User::with(['profile', 'location', 'groups'])->orderBy('name', 'ASC')->get();
 
         return response()
-            ->json([
-                'servicios' => $servicios
-            ]);
+            ->json(['servicios' => $servicios]);
     }
 }

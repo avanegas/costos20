@@ -51,6 +51,13 @@
                                 {{ role.name }},
                             </span>
                     </template>
+
+                    <template v-else-if="lista === 'services'">
+                            <span v-for="group in filteredData[i].groups">
+                                {{ group.name }},
+                            </span>
+                    </template>
+
                     <template v-else-if="lista === 'roles'">
                         {{ filteredData[i].name }}
                     </template>

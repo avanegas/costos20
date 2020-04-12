@@ -53,16 +53,16 @@
             return {
                 searchQuery:'',
                 gridData: [],
-                gridColumns:['roles', 'name', 'email', 'updated_at'],
-                lista:'users',
+                gridColumns:['groups','name', 'email', 'profile', 'location'],
+                lista:'servicios',
                 isAutorized: false
             }
         },
         created() {
-            get(`../api/users`)
+            get(`../api/servicio`)
                 .then((res) => {
-                    //console.log(res);
-                    this.gridData = res.data.users
+                    console.log(res);
+                    this.gridData = res.data.servicios
                 })
         }
     }

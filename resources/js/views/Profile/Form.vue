@@ -3,8 +3,8 @@
         <div class="col-md">
             <div class="card mt-3">
                 <div class="card-header row m-0">
-                    <h5 class = "col-4"><i class='fa fa-user-times'></i> {{action}} Perfil de {{form.user.name}}</h5>
-                    <div class="form-group col-8">
+                    <h5 class = "col-5"><i class='fa fa-user-times'></i> {{action}} Perfil de {{form.user.name}}</h5>
+                    <div class="form-group col-7">
                         <button type="button" class="btn btn-primary btn-sm mr-1 float-right" @click="save" :disabled="isProcessing"> Save</button>
                         <button type="button" class="btn btn-secondary btn-sm mr-1 float-right" @click="$router.back()" :disabled="isProcessing"> Cancel
                         </button>

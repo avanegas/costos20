@@ -2288,6 +2288,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -8943,17 +8950,17 @@ __webpack_require__.r(__webpack_exports__);
     return {
       searchQuery: '',
       gridData: [],
-      gridColumns: ['roles', 'name', 'email', 'updated_at'],
-      lista: 'users',
+      gridColumns: ['groups', 'name', 'email', 'profile', 'location'],
+      lista: 'servicios',
       isAutorized: false
     };
   },
   created: function created() {
     var _this = this;
 
-    Object(_helpers_api__WEBPACK_IMPORTED_MODULE_0__["get"])("../api/users").then(function (res) {
-      //console.log(res);
-      _this.gridData = res.data.users;
+    Object(_helpers_api__WEBPACK_IMPORTED_MODULE_0__["get"])("../api/servicio").then(function (res) {
+      console.log(res);
+      _this.gridData = res.data.servicios;
     });
   }
 });
@@ -45663,6 +45670,16 @@ var render = function() {
                               )
                             ])
                           })
+                        : _vm.lista === "services"
+                        ? _vm._l(_vm.filteredData[i].groups, function(group) {
+                            return _c("span", [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(group.name) +
+                                  ",\n                        "
+                              )
+                            ])
+                          })
                         : _vm.lista === "roles"
                         ? [
                             _vm._v(
@@ -54218,7 +54235,7 @@ var render = function() {
     _c("div", { staticClass: "col-md" }, [
       _c("div", { staticClass: "card mt-3" }, [
         _c("div", { staticClass: "card-header row m-0" }, [
-          _c("h5", { staticClass: "col-4" }, [
+          _c("h5", { staticClass: "col-5" }, [
             _c("i", { staticClass: "fa fa-user-times" }),
             _vm._v(
               " " +
@@ -54228,7 +54245,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group col-8" }, [
+          _c("div", { staticClass: "form-group col-7" }, [
             _c(
               "button",
               {
@@ -54943,14 +54960,14 @@ var render = function() {
     _c("div", { staticClass: "col-md" }, [
       _c("div", { staticClass: "card mt-3" }, [
         _c("div", { staticClass: "card-header row m-0" }, [
-          _c("h5", { staticClass: "col-3" }, [
+          _c("h5", { staticClass: "col-5" }, [
             _c("i", { staticClass: "fa fa-user-times" }),
             _vm._v(" Perfil de " + _vm._s(_vm.profile.user.name))
           ]),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "form-group col-9" },
+            { staticClass: "form-group col-7" },
             [
               _c(
                 "router-link",
