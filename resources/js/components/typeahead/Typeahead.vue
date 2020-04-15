@@ -60,7 +60,7 @@
             selectedText() {
                 return this.initialize && this.initialize.text
                     ? this.initialize.text
-                    : 'Click'
+                    :'+'
             }
         },
         methods: {

@@ -2687,7 +2687,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     selectedText: function selectedText() {
-      return this.initialize && this.initialize.text ? this.initialize.text : 'Click';
+      return this.initialize && this.initialize.text ? this.initialize.text : '+';
     }
   },
   methods: {
@@ -6053,7 +6053,7 @@ __webpack_require__.r(__webpack_exports__);
       authState: _store_auth__WEBPACK_IMPORTED_MODULE_0__["default"].state,
       searchQuery: '',
       gridData: [],
-      gridColumns: ['name', 'status', 'file', 'updated_at'],
+      gridColumns: ['name', 'status', 'image', 'updated_at'],
       lista: 'ofertas',
       isAutorized: false
     };
@@ -6401,7 +6401,7 @@ __webpack_require__.r(__webpack_exports__);
       authState: _store_auth__WEBPACK_IMPORTED_MODULE_0__["default"].state,
       searchQuery: '',
       gridData: [],
-      gridColumns: ['name', 'status', 'updated_at'],
+      gridColumns: ['name', 'status', 'image', 'updated_at'],
       lista: 'posts',
       isAutorized: false
     };
@@ -7779,6 +7779,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -7833,7 +7835,7 @@ function initialize(to) {
       }, 0);
     },
     gran_total: function gran_total() {
-      return this.sub_total - parseFloat(this.form.descuento);
+      return this.sub_total + parseFloat(this.form.descuento);
     }
   },
   methods: {
@@ -8896,9 +8898,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../helpers/api */ "./resources/js/helpers/api.js");
 /* harmony import */ var _components_ListaSearch_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/ListaSearch.vue */ "./resources/js/components/ListaSearch.vue");
-//
-//
-//
 //
 //
 //
@@ -45664,9 +45663,9 @@ var render = function() {
                         ? _vm._l(_vm.filteredData[i].roles, function(role) {
                             return _c("span", [
                               _vm._v(
-                                "\n                            " +
+                                "\n                        " +
                                   _vm._s(role.name) +
-                                  ",\n                        "
+                                  ",\n                    "
                               )
                             ])
                           })
@@ -45674,9 +45673,9 @@ var render = function() {
                         ? _vm._l(_vm.filteredData[i].groups, function(group) {
                             return _c("span", [
                               _vm._v(
-                                "\n                            " +
+                                "\n                        " +
                                   _vm._s(group.name) +
-                                  ",\n                        "
+                                  ",\n                    "
                               )
                             ])
                           })
@@ -45768,9 +45767,9 @@ var render = function() {
                           ) {
                             return _c("span", [
                               _vm._v(
-                                "\n                            " +
+                                "\n                        " +
                                   _vm._s(permission.name) +
-                                  ",\n                        "
+                                  ",\n                    "
                               )
                             ])
                           })
@@ -45784,11 +45783,43 @@ var render = function() {
                     ]
                   : index === 2
                   ? [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(entry[key]) +
-                          "\n                "
-                      )
+                      _vm.lista === "posts"
+                        ? [
+                            _c("span", [
+                              _c("img", {
+                                staticClass: "img-thumbnail",
+                                attrs: {
+                                  src:
+                                    "../images/" +
+                                    _vm.filteredData[i].image.url,
+                                  width: "75px"
+                                }
+                              })
+                            ])
+                          ]
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.lista === "ofertas"
+                        ? [
+                            _c("span", [
+                              _c("img", {
+                                staticClass: "img-thumbnail",
+                                attrs: {
+                                  src:
+                                    "../images/" +
+                                    _vm.filteredData[i].image.url,
+                                  width: "75px"
+                                }
+                              })
+                            ])
+                          ]
+                        : [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(entry[key]) +
+                                "\n                "
+                            )
+                          ]
                     ]
                   : [
                       _vm._v(
@@ -55220,7 +55251,9 @@ var render = function() {
         _c("div", { staticClass: "card-body" }, [
           _c("div", { staticClass: "form-row" }, [
             _c("div", { staticClass: "form-group col-8" }, [
-              _c("label", [_vm._v("PROYECTO")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("PROYECTO")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55252,7 +55285,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-3" }, [
-              _c("label", [_vm._v("UBICACION")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("UBICACION")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55284,7 +55319,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-1" }, [
-              _c("label", [_vm._v("DISTANCIA")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("DISTANCIA")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55318,7 +55355,9 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "form-row row" }, [
             _c("div", { staticClass: "form-group col-8" }, [
-              _c("label", [_vm._v("CONTRATANTE")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("CONTRATANTE")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55350,7 +55389,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-2" }, [
-              _c("label", [_vm._v("FECHA")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("FECHA")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55382,7 +55423,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-1" }, [
-              _c("label", [_vm._v("FORMA")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("FORMA")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55414,7 +55457,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-1" }, [
-              _c("label", [_vm._v("DECIMAL")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("DECIMAL")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55448,7 +55493,9 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "form-row row" }, [
             _c("div", { staticClass: "form-group col-4" }, [
-              _c("label", [_vm._v("OFERENTE")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("OFERENTE")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55480,7 +55527,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-4" }, [
-              _c("label", [_vm._v("REPRESENTANTE")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("REPRESENTANTE")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55512,7 +55561,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-2" }, [
-              _c("label", [_vm._v("REFERENCIAL")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("REFERENCIAL")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55544,7 +55595,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-1" }, [
-              _c("label", [_vm._v("INDIRECTO")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("INDIRECTO")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55576,7 +55629,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-1" }, [
-              _c("label", [_vm._v("IVA")]),
+              _c("label", { staticClass: "font-weight-bold" }, [_vm._v("IVA")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -55608,7 +55661,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("h5", { staticClass: "text-center" }, [
+          _c("h5", { staticClass: "text-center font-weight-bold mt-5 mb-0" }, [
             _vm._v(
               "TABLA DE DESCRIPCION DE RUBROS, UNIDADES, CANTIDADES Y PRECIOS"
             )
@@ -55925,23 +55978,28 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("Select")]),
+        _c("th", { staticStyle: { width: "4%" } }, [
+          _c("i", {
+            staticClass: "fas fa-hand-point-up ml-1",
+            attrs: { size: "9x" }
+          })
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Id")]),
+        _c("th", { staticStyle: { width: "6%" } }, [_vm._v("Id")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Rubro Nº")]),
+        _c("th", { staticStyle: { width: "6%" } }, [_vm._v("#Rubro")]),
         _vm._v(" "),
         _c("th", [_vm._v("Descripcion")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Unidad")]),
+        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Unidad")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Cantidad")]),
+        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Cantidad")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Precio")]),
+        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Precio")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Total")]),
+        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Total")]),
         _vm._v(" "),
-        _c("th", { attrs: { width: "40px" } }, [_vm._v(" ")])
+        _c("th", { staticStyle: { width: "4%" } }, [_vm._v(" ")])
       ])
     ])
   }
@@ -56113,19 +56171,25 @@ var render = function() {
         _c("div", { staticClass: "card-body" }, [
           _c("div", { staticClass: "form-row row" }, [
             _c("div", { staticClass: "col-8" }, [
-              _c("label", [_vm._v("PROYECTO")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("PROYECTO")
+              ]),
               _vm._v(" "),
               _c("h6", [_vm._v(_vm._s(_vm.proyecto.name))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-3" }, [
-              _c("label", [_vm._v("UBICACION")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("UBICACION")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.ubicacion))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-1" }, [
-              _c("label", [_vm._v("DISTANCIA")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("DISTANCIA")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.distancia))])
             ])
@@ -56133,25 +56197,33 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "form-row row" }, [
             _c("div", { staticClass: "col-8" }, [
-              _c("label", [_vm._v("CONTRATANTE")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("CONTRATANTE")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.contratante))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-2" }, [
-              _c("label", [_vm._v("PRESENTACION")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("PRESENTACION")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.entrega))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-1" }, [
-              _c("label", [_vm._v("FORMATO")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("FORMATO")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.formato))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-1" }, [
-              _c("label", [_vm._v("DECIMAL")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("DECIMAL")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.precision))])
             ])
@@ -56159,37 +56231,45 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "form-row row" }, [
             _c("div", { staticClass: "col-4" }, [
-              _c("label", [_vm._v("OFERENTE")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("OFERENTE")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.oferente))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-4" }, [
-              _c("label", [_vm._v("REPRESENTANTE")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("REPRESENTANTE")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.representante))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-2" }, [
-              _c("label", [_vm._v("REFERENCIAL")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("REFERENCIAL")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.referencial))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-1" }, [
-              _c("label", [_vm._v("INDIRECTO")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("INDIRECTO")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.indirecto))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-1" }, [
-              _c("label", [_vm._v("IVA")]),
+              _c("label", { staticClass: "font-weight-bold" }, [_vm._v("IVA")]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.descuento))])
             ])
           ]),
           _vm._v(" "),
-          _c("h5", { staticClass: "text-center" }, [
+          _c("h5", { staticClass: "text-center font-weight-bold mt-5 mb-0" }, [
             _vm._v(
               "TABLA DE DESCRIPCION DE RUBROS, UNIDADES, CANTIDADES Y PRECIOS"
             )
@@ -56262,19 +56342,19 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("Id")]),
+        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Id")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Rubro Nº")]),
+        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Rubro Nº")]),
         _vm._v(" "),
         _c("th", [_vm._v("Descripcion")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Unidad")]),
+        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Unidad")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Cantidad")]),
+        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Cantidad")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Precio")]),
+        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Precio")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Total")])
+        _c("th", { staticStyle: { width: "10%" } }, [_vm._v("Total")])
       ])
     ])
   }
@@ -56583,7 +56663,7 @@ var render = function() {
       { staticClass: "col-md" },
       [
         _c("div", { staticClass: "form-group row mb-3 mt-3" }, [
-          _c("h5", { staticClass: "col-7" }, [
+          _c("h5", { staticClass: "col-8" }, [
             _vm._v(" Apuntes, detalles y teoría de la construcción.")
           ]),
           _vm._v(" "),
@@ -57510,23 +57590,7 @@ var render = function() {
               }
             }
           })
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-1" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "btn btn-primary",
-                attrs: { to: "/users/create" }
-              },
-              [_vm._v(" Nuevo")]
-            )
-          ],
-          1
-        )
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card" }, [
@@ -57567,7 +57631,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h5", { staticClass: "col-7" }, [
+    return _c("h5", { staticClass: "col-8" }, [
       _c("i", { staticClass: "fas fa-home" }),
       _vm._v(" Arquitectura "),
       _c("small", { staticStyle: { color: "rgb(51,115,255)" } }, [
@@ -78997,8 +79061,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\costos20\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\costos20\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/vagrant/Projects/costos20/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/vagrant/Projects/costos20/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

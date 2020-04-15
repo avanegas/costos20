@@ -84,7 +84,7 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $posts = Post::where('user_id', $id)->with(['user','category'])->orderBy('created_at', 'desc')->get();
+        $posts = Post::where('user_id', $id)->with(['user','category', 'image'])->orderBy('created_at', 'desc')->get();
 
         return response()
             ->json([

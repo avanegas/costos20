@@ -15,83 +15,85 @@
 				<div class="card-body">
 					<div class="form-row">
 						<div class="form-group col-8">
-						    <label>PROYECTO</label>
+						    <label
+                             class="font-weight-bold">PROYECTO</label>
 						    <input type="text" class="form-control" v-model="form.name">
 						    <small class="error-control" v-if="error.name">{{error.name[0]}}</small>
 						</div>
 						<div class="form-group col-3">
-						    <label>UBICACION</label>
+						    <label
+                             class="font-weight-bold">UBICACION</label>
 						    <input type="text" class="form-control" v-model="form.ubicacion">
 						    <small class="error-control" v-if="error.ubicacion">{{error.ubicacion[0]}}</small>
 						</div>
 						<div class="form-group col-1">
-						    <label>DISTANCIA</label>
+						    <label class="font-weight-bold">DISTANCIA</label>
 						    <input type="text" class="form-control" v-model="form.distancia">
 						    <small class="error-control" v-if="error.distancia">{{error.distancia[0]}}</small>
 						</div>
 					</div>
 					<div class="form-row row">
 						<div class="form-group col-8">
-						    <label>CONTRATANTE</label>
+						    <label class="font-weight-bold">CONTRATANTE</label>
 						    <input type="text" class="form-control" v-model="form.contratante">
 						    <small class="error-control" v-if="error.contratante">{{error.contratante[0]}}</small>
 						</div>
 						<div class="form-group col-2">
-						    <label>FECHA</label>
+						    <label class="font-weight-bold">FECHA</label>
 						    <input type="date" class="form-control" v-model="form.entrega">
 						    <small class="error-control" v-if="error.entrega">{{error.entrega[0]}}</small>
 						</div>
 						<div class="form-group col-1">
-						    <label>FORMA</label>
+						    <label class="font-weight-bold">FORMA</label>
 						    <input type="text" class="form-control" v-model="form.formato">
 						    <small class="error-control" v-if="error.formato">{{error.formato[0]}}</small>
 						</div>
 						<div class="form-group col-1">
-						    <label>DECIMAL</label>
+						    <label class="font-weight-bold">DECIMAL</label>
 						    <input type="text" class="form-control" v-model="form.precision">
 						    <small class="error-control" v-if="error.precision">{{error.precision[0]}}</small>
 						</div>
 					</div>
 					<div class="form-row row">
 						<div class="form-group col-4">
-						    <label>OFERENTE</label>
+						    <label class="font-weight-bold">OFERENTE</label>
 						    <input type="text" class="form-control" v-model="form.oferente">
 						    <small class="error-control" v-if="error.oferente">{{error.oferente[0]}}</small>
 						</div>
 						<div class="form-group col-4">
-						    <label>REPRESENTANTE</label>
+						    <label class="font-weight-bold">REPRESENTANTE</label>
 						    <input type="text" class="form-control" v-model="form.representante">
 						    <small class="error-control" v-if="error.representante">{{error.representante[0]}}</small>
 						</div>
 						<div class="form-group col-2">
-						    <label>REFERENCIAL</label>
+						    <label class="font-weight-bold">REFERENCIAL</label>
 						    <input type="text" class="form-control" v-model="form.referencial">
 						    <small class="error-control" v-if="error.referencial">{{error.referencial[0]}}</small>
 						</div>
 	                    <div class="form-group col-1">
-	                        <label>INDIRECTO</label>
+	                        <label class="font-weight-bold">INDIRECTO</label>
 	                        <input type="text" class="form-control" v-model="form.indirecto">
 	                        <small class="error-control" v-if="error.indirecto">{{error.indirecto[0]}}</small>
 	                    </div>
 	                    <div class="form-group col-1">
-	                        <label>IVA</label>
+	                        <label class="font-weight-bold">IVA</label>
 	                        <input type="text" class="form-control" v-model="form.descuento">
 	                        <small class="error-control" v-if="error.descuento">{{error.descuento[0]}}</small>
 	                    </div>
 					</div>
-					<h5 class="text-center">TABLA DE DESCRIPCION DE RUBROS, UNIDADES, CANTIDADES Y PRECIOS</h5>
+					<h5 class="text-center font-weight-bold mt-5 mb-0">TABLA DE DESCRIPCION DE RUBROS, UNIDADES, CANTIDADES Y PRECIOS</h5>
 					<table class="table table-bordered table-striped table-sm">
 						<thead>
 							<tr>
-								<th>Select</th>
-								<th>Id</th>
-								<th>Rubro Nº</th>
+								<th style="width:4%;"><i class="fas fa-hand-point-up ml-1" size="9x"></i></th>
+								<th style="width:6%;">Id</th>
+								<th style="width:6%;">#Rubro</th>
 								<th>Descripcion</th>
-								<th>Unidad</th>
-								<th>Cantidad</th>
-								<th>Precio</th>
-								<th>Total</th>
-								<th width="40px">&nbsp;</th>
+								<th style="width:10%;">Unidad</th>
+								<th style="width:10%;">Cantidad</th>
+								<th style="width:10%;">Precio</th>
+								<th style="width:10%;">Total</th>
+								<th style="width:4%;">&nbsp;</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -203,7 +205,7 @@
 		      }, 0);
 		    },
 		    gran_total: function() {
-		      return this.sub_total - parseFloat(this.form.descuento);
+		      return this.sub_total + parseFloat(this.form.descuento);
 		    }
 		  },
 		methods: {

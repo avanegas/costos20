@@ -47,15 +47,15 @@
                         {{ filteredData[i].user.name }}
                     </template>
                     <template v-else-if="lista === 'users'">
-                            <span v-for="role in filteredData[i].roles">
-                                {{ role.name }},
-                            </span>
+                        <span v-for="role in filteredData[i].roles">
+                            {{ role.name }},
+                        </span>
                     </template>
 
                     <template v-else-if="lista === 'services'">
-                            <span v-for="group in filteredData[i].groups">
-                                {{ group.name }},
-                            </span>
+                        <span v-for="group in filteredData[i].groups">
+                            {{ group.name }},
+                        </span>
                     </template>
 
                     <template v-else-if="lista === 'roles'">
@@ -92,9 +92,9 @@
                         {{ filteredData[i].name }}
                     </template>
                     <template v-else-if="lista === 'roles'">
-                            <span v-for="permission in filteredData[i].permissions">
-                                {{ permission.name }},
-                            </span>
+                        <span v-for="permission in filteredData[i].permissions">
+                            {{ permission.name }},
+                        </span>
                     </template>
                     <template v-else>
                         {{entry[key]}}
@@ -102,19 +102,19 @@
                 </template>
 
                 <template v-else-if="index === 2">
-                    <!--                        <template v-if= "lista === 'posts'">-->
-                    <!--                            <span >-->
-                    <!--                                <img :src="`../images/${filteredData[i].image.url}`" width="75px" class="img-thumbnail">-->
-                    <!--                            </span>-->
-                    <!--                        </template>-->
-                    <!--<template v-if="lista === 'ofertas'">-->
-                    <!--        <span>-->
-                    <!--            <img :src="`../images/${filteredData[i].image.url}`" width="75px" class="img-thumbnail">-->
-                    <!--        </span>-->
-                    <!--</template>-->
-                    <!--<template v-else>-->
+                    <template v-if= "lista === 'posts'">
+                        <span>
+                            <img :src="`../images/${filteredData[i].image.url}`" width="75px" class="img-thumbnail">
+                        </span>
+                    </template>
+                    <template v-if="lista === 'ofertas'">
+                        <span>
+                            <img :src="`../images/${filteredData[i].image.url}`" width="75px" class="img-thumbnail">
+                        </span>
+                    </template>
+                    <template v-else>
                         {{entry[key]}}
-                    <!--</template>-->
+                    </template>
                 </template>
 
                 <template v-else>
@@ -177,7 +177,6 @@
         },
         filters: {
             capitalize: function (str) {
-
                 if (str.substring(0, 4) === "user") {
                     str = "autor"
                 }
@@ -193,20 +192,16 @@
                 if (str.substring(0, 4) === "gran") {
                     str = "costo"
                 }
-
                 return str.charAt(0).toUpperCase() + str.slice(1)
             }
         },
         methods: {
-
             sortBy: function (key) {
                 this.sortKey = key
                 this.sortOrders[key] = this.sortOrders[key] * -1
             },
             agrega(entry) {
-
                 if (this.authState.api_token && this.authState.user_id === 1) {
-
                     switch (this.lista) {
                         case "posts": {
                             this.$router.push(`/${this.lista}/${entry['id']}/edit`);
@@ -298,9 +293,7 @@
                         }
                     }
                 }
-
-
             }
         }
-    };
+    }
 </script>

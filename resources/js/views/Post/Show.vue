@@ -33,7 +33,6 @@
     import Auth from '../../store/auth'
     import {get} from '../../helpers/api'
     import ListaSearch from '../../components/ListaSearch.vue'
-
     export default {
         components: {
             ListaSearch
@@ -43,7 +42,7 @@
                 authState: Auth.state,
                 searchQuery: '',
                 gridData: [],
-                gridColumns: ['name', 'status', 'updated_at'],
+                gridColumns: ['name', 'status', 'image', 'updated_at'],
                 lista: 'posts',
                 isAutorized: false
             }

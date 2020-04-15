@@ -68,7 +68,7 @@ class OfertaController extends Controller
 
     public function show($id)
     {
-        $ofertas = Oferta::where('user_id', $id)->with(['user'])->orderBy('created_at', 'desc')->get();
+        $ofertas = Oferta::where('user_id', $id)->with(['user', 'image'])->orderBy('created_at', 'desc')->get();
 
         return response()
             ->json(['ofertas' => $ofertas]);
@@ -76,12 +76,12 @@ class OfertaController extends Controller
 
     public function edit(Request $request, $id)
     {
-        $form = Oferta::where('id', $id)->with(['user'])->first();
+        $form = Oferta::where('id', $id)->with(['user', 'image'])->first();
         //$this->authorize('pass', $post);
 
         return response()
             ->json([
-                'form'          => $form
+                'form' => $form
             ]);
     }
 

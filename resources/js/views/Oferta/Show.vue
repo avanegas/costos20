@@ -42,7 +42,7 @@
                 authState: Auth.state,
                 searchQuery:'',
                 gridData: [],
-                gridColumns:['name', 'status', 'file', 'updated_at'],
+                gridColumns:['name', 'status', 'image', 'updated_at'],
                 lista:'ofertas',
                 isAutorized: false
             }

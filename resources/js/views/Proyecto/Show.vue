@@ -16,70 +16,70 @@
 				<div class="card-body">
 					<div class="form-row row">
 						<div class="col-8">
-							<label>PROYECTO</label>
+							<label class="font-weight-bold">PROYECTO</label>
 							<h6>{{proyecto.name}}</h6>
 						</div>
 						<div class="col-3">
-							<label>UBICACION</label>
+							<label class="font-weight-bold">UBICACION</label>
 							<p>{{proyecto.ubicacion}}</p>
 						</div>
 						<div class="col-1">
-							<label>DISTANCIA</label>
+							<label class="font-weight-bold">DISTANCIA</label>
 							<p>{{proyecto.distancia}}</p>
 						</div>
 					</div>
 					<div class="form-row row">
 						<div class="col-8">
-							<label>CONTRATANTE</label>
+							<label class="font-weight-bold">CONTRATANTE</label>
 							<p>{{proyecto.contratante}}</p>
 						</div>
 						<div class="col-2">
-							<label>PRESENTACION</label>
+							<label class="font-weight-bold">PRESENTACION</label>
 							<p>{{proyecto.entrega}}</p>
 						</div>
 						<div class="col-1">
-							<label>FORMATO</label>
+							<label class="font-weight-bold">FORMATO</label>
 							<p>{{proyecto.formato}}</p>
 						</div>
 						<div class="col-1">
-							<label>DECIMAL</label>
+							<label class="font-weight-bold">DECIMAL</label>
 							<p>{{proyecto.precision}}</p>
 						</div>
 					</div>
 					<div class="form-row row">
 						<div class="col-4">
-							<label>OFERENTE</label>
+							<label class="font-weight-bold">OFERENTE</label>
 							<p>{{proyecto.oferente}}</p>
 						</div>
 						<div class="col-4">
-							<label>REPRESENTANTE</label>
+							<label class="font-weight-bold">REPRESENTANTE</label>
 							<p>{{proyecto.representante}}</p>
 						</div>
 	                    <div class="col-2">
-	                        <label>REFERENCIAL</label>
+	                        <label class="font-weight-bold">REFERENCIAL</label>
 	                        <p>{{proyecto.referencial}}</p>
 	                    </div>
 						<div class="col-1">
-							<label>INDIRECTO</label>
+							<label class="font-weight-bold">INDIRECTO</label>
 							<p>{{proyecto.indirecto}}</p>
 						</div>
 						<div class="col-1">
-							<label>IVA</label>
+							<label class="font-weight-bold">IVA</label>
 							<p>{{proyecto.descuento}}</p>
 						</div>
 					</div>
 
-					<h5 class="text-center">TABLA DE DESCRIPCION DE RUBROS, UNIDADES, CANTIDADES Y PRECIOS</h5>
+					<h5 class="text-center font-weight-bold mt-5 mb-0">TABLA DE DESCRIPCION DE RUBROS, UNIDADES, CANTIDADES Y PRECIOS</h5>
 					<table class="table table-bordered table-striped table-sm">
 						<thead>
 							<tr>
-								<th>Id</th>
-								<th>Rubro Nº</th>
+								<th style=" width:10%;">Id</th>
+								<th style=" width:10%;">Rubro Nº</th>
 								<th>Descripcion</th>
-								<th>Unidad</th>
-								<th>Cantidad</th>
-								<th>Precio</th>
-								<th>Total</th>
+								<th style=" width:10%;">Unidad</th>
+								<th style=" width:10%;">Cantidad</th>
+								<th style=" width:10%;">Precio</th>
+								<th style=" width:10%;">Total</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -122,7 +122,6 @@
 	import Auth from '../../store/auth'
 	import Flash from '../../helpers/flash'
 	import { get, byMethod } from '../../helpers/api'
-
 	export default {
 		data() {
 			return {
