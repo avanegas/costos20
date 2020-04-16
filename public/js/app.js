@@ -2295,6 +2295,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -5898,6 +5920,8 @@ __webpack_require__.r(__webpack_exports__);
       this.form.user_id = this.authState.user_id;
       var form = Object(_helpers_form__WEBPACK_IMPORTED_MODULE_4__["toMulipartedForm"])(this.form, this.$route.meta.mode);
       Object(_helpers_api__WEBPACK_IMPORTED_MODULE_3__["post"])(this.storeURL, form).then(function (res) {
+        console.log(res.data);
+
         if (res.data.saved) {
           _helpers_flash__WEBPACK_IMPORTED_MODULE_2__["default"].setSuccess(res.data.message);
 
@@ -6253,7 +6277,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.user_id = this.authState.user_id;
       var form = Object(_helpers_form__WEBPACK_IMPORTED_MODULE_4__["toMulipartedForm"])(this.form, this.$route.meta.mode);
       Object(_helpers_api__WEBPACK_IMPORTED_MODULE_3__["post"])(this.storeURL, form).then(function (res) {
-        console.log(res);
+        console.log(res.data);
 
         if (res.data.saved) {
           _helpers_flash__WEBPACK_IMPORTED_MODULE_2__["default"].setSuccess(res.data.message);
@@ -8958,7 +8982,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     Object(_helpers_api__WEBPACK_IMPORTED_MODULE_0__["get"])("../api/servicio").then(function (res) {
-      console.log(res);
+      console.log(res.data);
       _this.gridData = res.data.servicios;
     });
   }
@@ -45669,7 +45693,7 @@ var render = function() {
                               )
                             ])
                           })
-                        : _vm.lista === "services"
+                        : _vm.lista === "servicios"
                         ? _vm._l(_vm.filteredData[i].groups, function(group) {
                             return _c("span", [
                               _vm._v(
@@ -45783,7 +45807,7 @@ var render = function() {
                     ]
                   : index === 2
                   ? [
-                      _vm.lista === "posts"
+                      _vm.lista === "ofertas"
                         ? [
                             _c("span", [
                               _c("img", {
@@ -45797,9 +45821,7 @@ var render = function() {
                               })
                             ])
                           ]
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.lista === "ofertas"
+                        : _vm.lista === "posts"
                         ? [
                             _c("span", [
                               _c("img", {
@@ -45811,6 +45833,48 @@ var render = function() {
                                   width: "75px"
                                 }
                               })
+                            ])
+                          ]
+                        : [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(entry[key]) +
+                                "\n                "
+                            )
+                          ]
+                    ]
+                  : index === 3
+                  ? [
+                      _vm.lista === "servicios"
+                        ? [
+                            _c("span", [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(_vm.filteredData[i].profile.bio) +
+                                  "; TELEFONO:" +
+                                  _vm._s(_vm.filteredData[i].profile.phone) +
+                                  "\n                    "
+                              )
+                            ])
+                          ]
+                        : [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(entry[key]) +
+                                "\n                "
+                            )
+                          ]
+                    ]
+                  : index === 4
+                  ? [
+                      _vm.lista === "servicios"
+                        ? [
+                            _c("span", [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(_vm.filteredData[i].location.country) +
+                                  "\n                    "
+                              )
                             ])
                           ]
                         : [

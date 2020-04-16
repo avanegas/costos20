@@ -105,6 +105,7 @@
 				const form = toMulipartedForm(this.form, this.$route.meta.mode)
 				post(this.storeURL, form)
 				.then((res) => {
+                    console.log(res.data);
 					if(res.data.saved) {
 						Flash.setSuccess(res.data.message)
 						this.$router.push(`/ofertas/${res.data.id}`)

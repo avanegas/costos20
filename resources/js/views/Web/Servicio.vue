@@ -58,7 +58,7 @@
         created() {
             get(`../api/servicio`)
                 .then((res) => {
-                    console.log(res);
+                    console.log(res.data);
                     this.gridData = res.data.servicios
                 })
         }

@@ -40,10 +40,10 @@
         data() {
             return {
                 authState: Auth.state,
-                searchQuery:'',
+                searchQuery: '',
                 gridData: [],
-                gridColumns:['name', 'status', 'image', 'updated_at'],
-                lista:'ofertas',
+                gridColumns: ['name', 'status', 'image', 'updated_at'],
+                lista: 'ofertas',
                 isAutorized: false
             }
         },

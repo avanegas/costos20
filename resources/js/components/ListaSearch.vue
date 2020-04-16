@@ -52,7 +52,7 @@
                         </span>
                     </template>
 
-                    <template v-else-if="lista === 'services'">
+                    <template v-else-if="lista === 'servicios'">
                         <span v-for="group in filteredData[i].groups">
                             {{ group.name }},
                         </span>
@@ -102,14 +102,36 @@
                 </template>
 
                 <template v-else-if="index === 2">
-                    <template v-if= "lista === 'posts'">
+                    <template v-if="lista === 'ofertas'">
                         <span>
                             <img :src="`../images/${filteredData[i].image.url}`" width="75px" class="img-thumbnail">
                         </span>
                     </template>
-                    <template v-if="lista === 'ofertas'">
+                    <template v-else-if= "lista === 'posts'">
                         <span>
                             <img :src="`../images/${filteredData[i].image.url}`" width="75px" class="img-thumbnail">
+                        </span>
+                    </template>
+                    <template v-else>
+                        {{entry[key]}}
+                    </template>
+                </template>
+
+                <template v-else-if="index === 3">
+                    <template v-if="lista === 'servicios'">
+                        <span>
+                            {{ filteredData[i].profile.bio }}; TELEFONO:{{ filteredData[i].profile.phone }}
+                        </span>
+                    </template>
+                    <template v-else>
+                        {{entry[key]}}
+                    </template>
+                </template>
+
+                <template v-else-if="index === 4">
+                    <template v-if="lista === 'servicios'">
+                        <span>
+                            {{ filteredData[i].location.country }}
                         </span>
                     </template>
                     <template v-else>
