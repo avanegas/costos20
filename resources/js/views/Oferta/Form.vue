@@ -6,11 +6,11 @@
                     <h5>{{action}} Oferta</h5>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary btn-sm" @click="save" :disabled="isProcessing">Save</button>
+                    <button type="button" class="btn btn-primary btn-sm" @click="save" :disabled="isProcessing"> Save</button>
                     <template v-if="action == 'Update'">
-                        <button type="button" class="btn btn-danger btn-sm" @click.prevent="remove(form)" :disabled="isProcessing">Eliminar</button>
+                        <button type="button" class="btn btn-danger btn-sm" @click.prevent="remove(form)" :disabled="isProcessing"> Eliminar</button>
                     </template>
-                    <button type="button" class="btn btn-secondary btn-sm" @click="$router.back()" :disabled="isProcessing">Cancel</button>
+                    <button type="button" class="btn btn-secondary btn-sm" @click="$router.back()" :disabled="isProcessing"> Cancel</button>
                 </div>
             </div>
 
@@ -18,8 +18,8 @@
                 <div class="card card-body">
                     <div class="image-show">
                         <div class="card-body">
-                            <image-upload v-model="form.file"></image-upload>
-                            <small class="error-control" v-if="error.file">{{error.errors.file[0]}}</small>
+                            <image-upload v-model="form.image.url"></image-upload>
+                            <!--<small class="error-control" v-if="error.image.url">{{error.errors.image.url[0]}}</small>-->
                         </div>
                     </div>
                     <div class="card">
@@ -46,8 +46,13 @@
                             </div>
                             <div class="form-group">
                                 <label>Descripción</label>
-                                <textarea class="form-control form-description" v-model="form.descripcion"></textarea>
+                                <textarea class="form-control form-description" rows="8" v-model="form.descripcion"></textarea>
                                 <small class="error-control" v-if="error.errors.descripcion">{{error.errors.descripcion[0]}}</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Archivo</label>
+                                <input type="file" id="file" name="file" accept="txt,pdf" class="form-control" v-on:change="form.file"></input>
+                                <small class="error-control" v-if="error.errors.file">{{error.errors.file[0]}}</small>
                             </div>
                             <div class="form-group">
                                 <p>Estado de la oferta</p>
@@ -77,7 +82,9 @@
 		data() {
 			return {
                 authState: Auth.state,
-				form: {},
+				form: {
+                    image:[]
+                },
 				error: {
                     errors:{}
                 },
@@ -105,7 +112,7 @@
 				const form = toMulipartedForm(this.form, this.$route.meta.mode)
 				post(this.storeURL, form)
 				.then((res) => {
-                    console.log(res.data);
+                    //console.log(res.data);
 					if(res.data.saved) {
 						Flash.setSuccess(res.data.message)
 						this.$router.push(`/ofertas/${res.data.id}`)

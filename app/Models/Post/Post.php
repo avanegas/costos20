@@ -50,7 +50,8 @@ class Post extends Model
             'excerpt'       => '',
             'body'          => '',
             'status'        => 'DRAFT',
-            'tags'          => []
+               'image'      => [],
+               'tags'       => []
         ];
     }
 }

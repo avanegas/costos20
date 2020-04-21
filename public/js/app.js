@@ -5876,6 +5876,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -5889,7 +5894,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       authState: _store_auth__WEBPACK_IMPORTED_MODULE_1__["default"].state,
-      form: {},
+      form: {
+        image: []
+      },
       error: {
         errors: {}
       },
@@ -5920,8 +5927,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.user_id = this.authState.user_id;
       var form = Object(_helpers_form__WEBPACK_IMPORTED_MODULE_4__["toMulipartedForm"])(this.form, this.$route.meta.mode);
       Object(_helpers_api__WEBPACK_IMPORTED_MODULE_3__["post"])(this.storeURL, form).then(function (res) {
-        console.log(res.data);
-
+        //console.log(res.data);
         if (res.data.saved) {
           _helpers_flash__WEBPACK_IMPORTED_MODULE_2__["default"].setSuccess(res.data.message);
 
@@ -6109,14 +6115,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helpers/api */ "./resources/js/helpers/api.js");
 /* harmony import */ var _helpers_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helpers/form */ "./resources/js/helpers/form.js");
 /* harmony import */ var _components_ImageUpload_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/ImageUpload.vue */ "./resources/js/components/ImageUpload.vue");
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -51212,7 +51210,7 @@ var render = function() {
                 attrs: { type: "button", disabled: _vm.isProcessing },
                 on: { click: _vm.save }
               },
-              [_vm._v("Save")]
+              [_vm._v(" Save")]
             ),
             _vm._v(" "),
             _vm.action == "Update"
@@ -51229,7 +51227,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Eliminar")]
+                    [_vm._v(" Eliminar")]
                   )
                 ]
               : _vm._e(),
@@ -51245,7 +51243,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Cancel")]
+              [_vm._v(" Cancel")]
             )
           ],
           2
@@ -51261,19 +51259,13 @@ var render = function() {
               [
                 _c("image-upload", {
                   model: {
-                    value: _vm.form.file,
+                    value: _vm.form.image.url,
                     callback: function($$v) {
-                      _vm.$set(_vm.form, "file", $$v)
+                      _vm.$set(_vm.form.image, "url", $$v)
                     },
-                    expression: "form.file"
+                    expression: "form.image.url"
                   }
-                }),
-                _vm._v(" "),
-                _vm.error.file
-                  ? _c("small", { staticClass: "error-control" }, [
-                      _vm._v(_vm._s(_vm.error.errors.file[0]))
-                    ])
-                  : _vm._e()
+                })
               ],
               1
             )
@@ -51422,6 +51414,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control form-description",
+                  attrs: { rows: "8" },
                   domProps: { value: _vm.form.descripcion },
                   on: {
                     input: function($event) {
@@ -51436,6 +51429,27 @@ var render = function() {
                 _vm.error.errors.descripcion
                   ? _c("small", { staticClass: "error-control" }, [
                       _vm._v(_vm._s(_vm.error.errors.descripcion[0]))
+                    ])
+                  : _vm._e()
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", [_vm._v("Archivo")]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "file",
+                    id: "file",
+                    name: "file",
+                    accept: "txt,pdf"
+                  },
+                  on: { change: _vm.form.file }
+                }),
+                _vm._v(" "),
+                _vm.error.errors.file
+                  ? _c("small", { staticClass: "error-control" }, [
+                      _vm._v(_vm._s(_vm.error.errors.file[0]))
                     ])
                   : _vm._e()
               ]),
@@ -51719,7 +51733,7 @@ var render = function() {
                 attrs: { type: "button", disabled: _vm.isProcessing },
                 on: { click: _vm.save }
               },
-              [_vm._v("Save\n                ")]
+              [_vm._v(" Save")]
             ),
             _vm._v(" "),
             _vm.action == "Update"
@@ -51736,7 +51750,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Eliminar\n                    ")]
+                    [_vm._v(" Eliminar")]
                   )
                 ]
               : _vm._e(),
@@ -51752,7 +51766,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Cancel\n                ")]
+              [_vm._v(" Cancel")]
             )
           ],
           2
@@ -51899,7 +51913,7 @@ var render = function() {
               _c("div", { staticClass: "form-group" }, [
                 _c("label", [_vm._v("Resumen")]),
                 _vm._v(" "),
-                _c("input", {
+                _c("textarea", {
                   directives: [
                     {
                       name: "model",
@@ -51908,8 +51922,8 @@ var render = function() {
                       expression: "form.excerpt"
                     }
                   ],
-                  staticClass: "form-control",
-                  attrs: { type: "text" },
+                  staticClass: "form-control form-description",
+                  attrs: { rows: "6" },
                   domProps: { value: _vm.form.excerpt },
                   on: {
                     input: function($event) {
@@ -51941,6 +51955,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control form-description",
+                  attrs: { rows: "8" },
                   domProps: { value: _vm.form.body },
                   on: {
                     input: function($event) {
@@ -52010,35 +52025,28 @@ var render = function() {
                   _vm._v("Seleccione las etiquétas de categoría específica:")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "vs__dropdown-toogle" }, [
-                  _c(
-                    "div",
-                    { staticClass: "vs__selected-options" },
-                    [
-                      _c("v-select", {
-                        attrs: {
-                          multiple: "",
-                          label: "name",
-                          options: _vm.tags
+                _c(
+                  "div",
+                  [
+                    _c("v-select", {
+                      attrs: { multiple: "", label: "name", options: _vm.tags },
+                      model: {
+                        value: _vm.form.tags,
+                        callback: function($$v) {
+                          _vm.$set(_vm.form, "tags", $$v)
                         },
-                        model: {
-                          value: _vm.form.tags,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "tags", $$v)
-                          },
-                          expression: "form.tags"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _vm.error.errors.tags
-                    ? _c("small", { staticClass: "error-control" }, [
-                        _vm._v(_vm._s(_vm.error.errors.tags[0]))
-                      ])
-                    : _vm._e()
-                ])
+                        expression: "form.tags"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _vm.error.errors.tags
+                  ? _c("small", { staticClass: "error-control" }, [
+                      _vm._v(_vm._s(_vm.error.errors.tags[0]))
+                    ])
+                  : _vm._e()
               ])
             ])
           ])

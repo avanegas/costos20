@@ -33,9 +33,9 @@ class OfertaUpdateRequest extends FormRequest
             'status'        => 'required|in:DRAFT,PUBLISHED',
         ];
 
-        if ($this->get('file'))
+        if ($this->get('image->url'))
         {
-            $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,png']);
+            $rules = array_merge($rules, ['image->url' => 'mimes:jpg,jpeg,png']);
         }
 
         return $rules;

@@ -53,17 +53,18 @@ class PostController extends Controller
 
     public function store(PostStoreRequest $request)
     {
-        if(!$request->hasFile('file') && !$request->file('file')->isValid()) {
+        dd($request);
+        if(!$request->hasFile('image->url') && !$request->file('image->url')->isValid()) {
             return abort(404, 'Image not uploaded!');
         }
 
-        $filename = $this->getFileName($request->file);
-        $request->file->move(base_path('/public/images'), $filename);
+        $filename = $this->getFileName($request->image->url);
+        $request->image->url->move(base_path('/public/images'), $filename);
 
         $tags = Arr::pluck($request->get('tags'),'id');
 
         $post = new Post($request->only('category_id', 'user_id', 'name', 'slug', 'excerpt', 'body', 'status'));
-        $post->file = $filename;
+        $post->image->url = $filename;
         $post->save();
 
         //TAGS
@@ -77,9 +78,9 @@ class PostController extends Controller
             ]);
     }
 
-    private function getFileName($file)
+    private function getFileName($url)
     {
-        return Str::random(32).'.'.$file->extension();
+        return Str::random(32).'.'.$url->extension();
     }
 
     public function show($id)
@@ -118,13 +119,13 @@ class PostController extends Controller
         $tags = Arr::pluck($request->get('tags'),'id');
         $post->fill($request->all())->save();
 
-        if ($request->hasFile('file') && $request->file('file')->isValid()) {
-            $filename = $this->getFileName($request->file);
-            $request->file->move(base_path('/public/images'), $filename);
+        if ($request->hasFile('image->url') && $request->file('image->url')->isValid()) {
+            $filename = $this->getFileName($request->image->url);
+            $request->image->url->move(base_path('/public/images'), $filename);
 
             // remove old image
-            File::delete(base_path('/public/images/'.$post->file));
-            $post->file = $filename;
+            File::delete(base_path('/public/images/'.$post->image->url));
+            $post->image->url = $filename;
         }
 
         $post->save();

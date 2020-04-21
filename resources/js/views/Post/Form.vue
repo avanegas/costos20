@@ -6,24 +6,20 @@
                     <h5>{{action}} Artículo</h5>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary btn-sm" @click="save" :disabled="isProcessing">Save
-                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" @click="save" :disabled="isProcessing"> Save</button>
                     <template v-if="action == 'Update'">
-                        <button type="button" class="btn btn-danger btn-sm" @click.prevent="remove(form)"
-                                :disabled="isProcessing">Eliminar
-                        </button>
+                        <button type="button" class="btn btn-danger btn-sm" @click.prevent="remove(form)" :disabled="isProcessing"> Eliminar</button>
                     </template>
-                    <button type="button" class="btn btn-secondary btn-sm" @click="$router.back()"
-                            :disabled="isProcessing">Cancel
-                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm" @click="$router.back()" :disabled="isProcessing"> Cancel</button>
                 </div>
             </div>
+
             <div class="card">
                 <div class="card card-body">
                     <div class="image-show">
                         <div class="card-body">
                             <image-upload v-model="form.image.url"></image-upload>
-                         <!--   <small class="error-control" v-if="error.image.url">{{error.errors.image.url[0]}}</small>-->
+                            <!--<small class="error-control" v-if="error.image.url">{{error.errors.image.url[0]}}</small>-->
                         </div>
                     </div>
                     <div class="card">
@@ -50,13 +46,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Resumen</label>
-                                <input type="text" class="form-control" v-model="form.excerpt">
-                                <small class="error-control"
-                                       v-if="error.errors.excerpt">{{error.errors.excerpt[0]}}</small>
+                                <textarea class="form-control form-description" rows="6" v-model="form.excerpt"></textarea>
+                                <small class="error-control" v-if="error.errors.excerpt">{{error.errors.excerpt[0]}}</small>
                             </div>
                             <div class="form-group">
                                 <label>Contenido</label>
-                                <textarea class="form-control form-description" v-model="form.body"></textarea>
+                                <textarea class="form-control form-description" rows="8" v-model="form.body"></textarea>
                                 <small class="error-control" v-if="error.errors.body">{{error.errors.body[0]}}</small>
                             </div>
                             <div class="form-group">
@@ -68,13 +63,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Seleccione las etiquétas de categoría específica:</label>
-                                <div class="vs__dropdown-toogle">
-                                    <div class="vs__selected-options">
-                                        <v-select multiple label="name" :options="tags" v-model="form.tags"></v-select>
-                                    </div>
-                                    <small class="error-control"
-                                           v-if="error.errors.tags">{{error.errors.tags[0]}}</small>
+                                <div>
+                                    <v-select multiple label="name" :options="tags" v-model="form.tags"></v-select>
                                 </div>
+                                <small class="error-control" v-if="error.errors.tags">{{error.errors.tags[0]}}</small>
                             </div>
                         </div>
                     </div>
@@ -90,7 +82,6 @@
     import {get, post, del, byMethod} from '../../helpers/api'
     import {toMulipartedForm} from '../../helpers/form'
     import ImageUpload from '../../components/ImageUpload.vue'
-
     export default {
         components: {
             ImageUpload

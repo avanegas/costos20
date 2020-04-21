@@ -29,14 +29,15 @@ class Oferta extends Model
     public static function form()
     {
       return [
-      	'user_id'		=> '',
-        'name'      	=> '',
-        'unidad'     	=> '',
-        'descripcion'  	=> '',
-        'stock'     	=> '',
-        'precio'		=> '',
-        'file'			=> '',
-        'status'		=> 'DRAFT'
+      	'user_id'	  => '',
+        'name'        => '',
+        'unidad'      => '',
+        'descripcion' => '',
+        'stock'       => '',
+        'precio'	  => '',
+        'file'		  => '',
+        'status'	  => 'DRAFT',
+          'image'     => [],
       ];
     }
 }

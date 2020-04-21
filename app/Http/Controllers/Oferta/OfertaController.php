@@ -42,15 +42,15 @@ class OfertaController extends Controller
 
     public function store(OfertaStoreRequest $request)
     {
-        if(!$request->hasFile('file') && !$request->file('file')->isValid()) {
+        if(!$request->hasFile('image->url') && !$request->file('image->url')->isValid()) {
             return abort(404, 'Image not uploaded!');
         }
 
-        $filename = $this->getFileName($request->file);
-        $request->file->move(base_path('/public/images'), $filename);
+        $filename = $this->getFileName($request->image->url);
+        $request->image->url->move(base_path('/public/images'), $filename);
 
         $oferta = new Oferta($request->only( 'user_id', 'name', 'unidad', 'descripcion', 'stock', 'precio', 'status'));
-        $oferta->file = $filename;
+        $oferta->image->url = $filename;
         $oferta->save();
 
         return response()
@@ -61,9 +61,9 @@ class OfertaController extends Controller
             ]);
     }
 
-    private function getFileName($file)
+    private function getFileName($url)
     {
-        return Str::random(32).'.'.$file->extension();
+        return Str::random(32).'.'.$url->extension();
     }
 
     public function show($id)

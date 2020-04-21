@@ -24,8 +24,8 @@ class PostUpdateRequest extends FormRequest
     public function rules()
     {
         $rules = [
-        	'user_id'		=> 'required|integer', 
-            'category_id'   => 'required|integer',         
+        	'user_id'		=> 'required|integer',
+            'category_id'   => 'required|integer',
             'name'          => 'required',
             'slug'          => 'required|unique:posts,slug,' . $this->post,
             'excerpt'       => 'required',
@@ -34,10 +34,10 @@ class PostUpdateRequest extends FormRequest
             'tags'          => 'required|array',
         ];
 
-        if ($this->get('file'))
+        if ($this->get('image->url'))
         {
-           $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,png']);  
-        }       
+           $rules = array_merge($rules, ['image->url' => 'mimes:jpg,jpeg,png']);
+        }
 
         return $rules;
     }
