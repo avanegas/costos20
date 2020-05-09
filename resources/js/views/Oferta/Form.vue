@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Archivo</label>
-                                <input type="file" id="file" name="file" accept="txt,pdf" class="form-control" v-on:change="form.file"></input>
+                                <input type="file" id="file" name="file" accept=".txt, .pdf" v-on:change="upload"></input>
                                 <small class="error-control" v-if="error.errors.file">{{error.errors.file[0]}}</small>
                             </div>
                             <div class="form-group">
@@ -126,6 +126,9 @@
 					this.isProcessing = false
 				})
 			},
+            upload() {
+
+            },
 			remove() {
                 del(`/api/ofertas/${this.$route.params.id}`).then((res) => {
                     Flash.setSuccess('Ha eliminado correctamente la Oferta!')

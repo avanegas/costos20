@@ -5943,6 +5943,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.isProcessing = false;
       });
     },
+    upload: function upload() {},
     remove: function remove() {
       var _this3 = this;
 
@@ -6275,8 +6276,6 @@ __webpack_require__.r(__webpack_exports__);
       this.form.user_id = this.authState.user_id;
       var form = Object(_helpers_form__WEBPACK_IMPORTED_MODULE_4__["toMulipartedForm"])(this.form, this.$route.meta.mode);
       Object(_helpers_api__WEBPACK_IMPORTED_MODULE_3__["post"])(this.storeURL, form).then(function (res) {
-        console.log(res.data);
-
         if (res.data.saved) {
           _helpers_flash__WEBPACK_IMPORTED_MODULE_2__["default"].setSuccess(res.data.message);
 
@@ -51437,14 +51436,13 @@ var render = function() {
                 _c("label", [_vm._v("Archivo")]),
                 _vm._v(" "),
                 _c("input", {
-                  staticClass: "form-control",
                   attrs: {
                     type: "file",
                     id: "file",
                     name: "file",
-                    accept: "txt,pdf"
+                    accept: ".txt, .pdf"
                   },
-                  on: { change: _vm.form.file }
+                  on: { change: _vm.upload }
                 }),
                 _vm._v(" "),
                 _vm.error.errors.file
@@ -73945,9 +73943,9 @@ __webpack_require__.r(__webpack_exports__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function toMulipartedForm(form, mode) {
-  if (mode === 'edit' && typeof form.file === 'string') {
+  if (mode === 'edit' && typeof form.image.url === 'string') {
     var temp = JSON.parse(JSON.stringify(form));
-    delete temp.file;
+    delete temp.image.url;
     return temp;
   } else {
     return objectToFormData(form);

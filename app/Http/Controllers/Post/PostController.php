@@ -53,7 +53,8 @@ class PostController extends Controller
 
     public function store(PostStoreRequest $request)
     {
-        dd($request);
+        //dd($request);
+
         if(!$request->hasFile('image->url') && !$request->file('image->url')->isValid()) {
             return abort(404, 'Image not uploaded!');
         }
