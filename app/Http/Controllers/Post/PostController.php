@@ -79,9 +79,9 @@ class PostController extends Controller
             ]);
     }
 
-    private function getFileName($url)
+    private function getFileName($file)
     {
-        return Str::random(32).'.'.$url->extension();
+        return Str::random(32).'.'.$file->extension();
     }
 
     public function show($id)
