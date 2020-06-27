@@ -82,8 +82,21 @@
     import {get, post, del, byMethod} from '../../helpers/api'
     import {toMulipartedForm} from '../../helpers/form'
     import ImageUpload from '../../components/ImageUpload.vue'
+
+    import {Typeahead } from '../../components/typeahead'
+
+    function initialize(to) {
+        let urls = {
+            'create': `/api/posts/create`,
+            'edit': `/api/posts/${to.params.id}/edit`
+        }
+
+        return (urls[to.meta.mode] || urls['create'])
+    }
+
     export default {
         components: {
+            Typeahead,
             ImageUpload
         },
         data() {

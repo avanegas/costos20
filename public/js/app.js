@@ -6116,6 +6116,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helpers/api */ "./resources/js/helpers/api.js");
 /* harmony import */ var _helpers_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helpers/form */ "./resources/js/helpers/form.js");
 /* harmony import */ var _components_ImageUpload_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/ImageUpload.vue */ "./resources/js/components/ImageUpload.vue");
+/* harmony import */ var _components_typeahead__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/typeahead */ "./resources/js/components/typeahead/index.js");
 //
 //
 //
@@ -6198,9 +6199,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+function initialize(to) {
+  var urls = {
+    'create': "/api/posts/create",
+    'edit': "/api/posts/".concat(to.params.id, "/edit")
+  };
+  return urls[to.meta.mode] || urls['create'];
+}
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
+    Typeahead: _components_typeahead__WEBPACK_IMPORTED_MODULE_6__["Typeahead"],
     ImageUpload: _components_ImageUpload_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   data: function data() {
@@ -73943,9 +73955,9 @@ __webpack_require__.r(__webpack_exports__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function toMulipartedForm(form, mode) {
-  if (mode === 'edit' && typeof form.image.url === 'string') {
+  if (mode === 'edit' && typeof form.file === 'string') {
     var temp = JSON.parse(JSON.stringify(form));
-    delete temp.image.url;
+    delete temp.file;
     return temp;
   } else {
     return objectToFormData(form);
