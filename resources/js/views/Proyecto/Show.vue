@@ -38,11 +38,11 @@
 							<p>{{proyecto.entrega}}</p>
 						</div>
 						<div class="col-1">
-							<label class="font-weight-bold">FORMATO</label>
+							<label class="font-weight-bold">FORMA</label>
 							<p>{{proyecto.formato}}</p>
 						</div>
 						<div class="col-1">
-							<label class="font-weight-bold">DECIMAL</label>
+							<label class="font-weight-bold">#DEC.</label>
 							<p>{{proyecto.precision}}</p>
 						</div>
 					</div>
@@ -60,11 +60,11 @@
 	                        <p>{{proyecto.referencial}}</p>
 	                    </div>
 						<div class="col-1">
-							<label class="font-weight-bold">INDIRECTO</label>
+							<label class="font-weight-bold">C.IND.</label>
 							<p>{{proyecto.indirecto}}</p>
 						</div>
 						<div class="col-1">
-							<label class="font-weight-bold">IVA</label>
+							<label class="font-weight-bold">I.V.A.</label>
 							<p>{{proyecto.descuento}}</p>
 						</div>
 					</div>

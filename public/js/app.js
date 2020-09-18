@@ -55488,7 +55488,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-1" }, [
               _c("label", { staticClass: "font-weight-bold" }, [
-                _vm._v("DECIMAL")
+                _vm._v("@DEC.")
               ]),
               _vm._v(" "),
               _c("input", {
@@ -55626,7 +55626,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-1" }, [
               _c("label", { staticClass: "font-weight-bold" }, [
-                _vm._v("INDIRECTO")
+                _vm._v("C.IND.")
               ]),
               _vm._v(" "),
               _c("input", {
@@ -55659,7 +55659,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group col-1" }, [
-              _c("label", { staticClass: "font-weight-bold" }, [_vm._v("IVA")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("I.V.A.")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -56244,7 +56246,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "col-1" }, [
               _c("label", { staticClass: "font-weight-bold" }, [
-                _vm._v("FORMATO")
+                _vm._v("FORMA")
               ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.formato))])
@@ -56252,7 +56254,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "col-1" }, [
               _c("label", { staticClass: "font-weight-bold" }, [
-                _vm._v("DECIMAL")
+                _vm._v("#DEC.")
               ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.precision))])
@@ -56286,14 +56288,16 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "col-1" }, [
               _c("label", { staticClass: "font-weight-bold" }, [
-                _vm._v("INDIRECTO")
+                _vm._v("C.IND.")
               ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.indirecto))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-1" }, [
-              _c("label", { staticClass: "font-weight-bold" }, [_vm._v("IVA")]),
+              _c("label", { staticClass: "font-weight-bold" }, [
+                _vm._v("I.V.A.")
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(_vm.proyecto.descuento))])
             ])
@@ -79194,8 +79198,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/Projects/costos20/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/vagrant/Projects/costos20/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/vagrant/Projects/Costos20/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/vagrant/Projects/Costos20/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

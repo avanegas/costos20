@@ -49,7 +49,7 @@
 						    <small class="error-control" v-if="error.formato">{{error.formato[0]}}</small>
 						</div>
 						<div class="form-group col-1">
-						    <label class="font-weight-bold">DECIMAL</label>
+						    <label class="font-weight-bold">@DEC.</label>
 						    <input type="text" class="form-control" v-model="form.precision">
 						    <small class="error-control" v-if="error.precision">{{error.precision[0]}}</small>
 						</div>
@@ -71,12 +71,12 @@
 						    <small class="error-control" v-if="error.referencial">{{error.referencial[0]}}</small>
 						</div>
 	                    <div class="form-group col-1">
-	                        <label class="font-weight-bold">INDIRECTO</label>
+	                        <label class="font-weight-bold">C.IND.</label>
 	                        <input type="text" class="form-control" v-model="form.indirecto">
 	                        <small class="error-control" v-if="error.indirecto">{{error.indirecto[0]}}</small>
 	                    </div>
 	                    <div class="form-group col-1">
-	                        <label class="font-weight-bold">IVA</label>
+	                        <label class="font-weight-bold">I.V.A.</label>
 	                        <input type="text" class="form-control" v-model="form.descuento">
 	                        <small class="error-control" v-if="error.descuento">{{error.descuento[0]}}</small>
 	                    </div>
