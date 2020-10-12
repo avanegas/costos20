@@ -8980,6 +8980,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -57587,6 +57588,15 @@ var render = function() {
                   attrs: { to: "/users" }
                 },
                 [_vm._v("Especialistas")]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-secondary btn-sm mr-1 float-right",
+                  attrs: { to: "/users" }
+                },
+                [_vm._v("Empresas")]
               ),
               _vm._v(" "),
               _c(

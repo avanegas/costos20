@@ -10,6 +10,7 @@
                         <router-link to="/roles"       class="btn btn-secondary btn-sm mr-1 float-right">Maestros/Obreros</router-link>
                         <router-link to="/roles"       class="btn btn-secondary btn-sm mr-1 float-right">Ingenieros</router-link>
                         <router-link to="/users"       class="btn btn-secondary btn-sm mr-1 float-right">Especialistas</router-link>
+                        <router-link to="/users"       class="btn btn-secondary btn-sm mr-1 float-right">Empresas</router-link>
                         <router-link to="/users"       class="btn btn-secondary btn-sm mr-1 float-right">Arquitectos</router-link>
                     </div>
                 </div>

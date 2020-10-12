@@ -13,9 +13,10 @@ class DatabaseSeeder extends Seeder
         // Group Users
         factory(App\Group::class)->create(['name'  => 'ND']);
         factory(App\Group::class)->create(['name'  => 'ARQUITECTO']);
-        factory(App\Group::class)->create(['name'  => 'INGENIERO']);
+        factory(App\Group::class)->create(['name'  => 'EMPRESA']);
         factory(App\Group::class)->create(['name'  => 'ESPECIALISTA']);
-        factory(App\Group::class)->create(['name'  => 'OBRERO']);
+        factory(App\Group::class)->create(['name'  => 'INGENIERO']);
+        factory(App\Group::class)->create(['name'  => 'MAESTRO']);
         factory(App\Group::class)->create(['name'  => 'PROFESIONAL']);
         factory(App\Group::class)->create(['name'  => 'PROVEEDOR']);
 
