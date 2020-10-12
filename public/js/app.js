@@ -3828,7 +3828,11 @@ __webpack_require__.r(__webpack_exports__);
   props: ['comment'],
   data: function data() {
     return {
-      comments: {}
+      comments: {
+        user: {
+          image: {}
+        }
+      }
     };
   }
 });
@@ -8900,7 +8904,11 @@ __webpack_require__.r(__webpack_exports__);
         category: {},
         image: {},
         tags: {},
-        comments: {}
+        comments: {
+          user: {
+            image: {}
+          }
+        }
       }
     };
   },
@@ -79198,8 +79206,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/Projects/Costos20/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/vagrant/Projects/Costos20/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/vagrant/Projects/costos20/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/vagrant/Projects/costos20/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

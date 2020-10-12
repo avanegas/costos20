@@ -23,7 +23,11 @@
         props: ['comment'],
         data() {
             return {
-                comments:{}
+                comments:{
+                  user:{
+                    image:{},
+                  }
+                }
             }
         }
     }

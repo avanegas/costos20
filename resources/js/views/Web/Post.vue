@@ -61,7 +61,11 @@
                     category:{},
                     image:{},
                     tags:{},
-                    comments:{}
+                    comments:{
+                      user: {
+                        image:{},
+                      }
+                    }
                 }
             }
         },
