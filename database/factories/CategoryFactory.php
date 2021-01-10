@@ -7,11 +7,12 @@ use Faker\Generator as Faker;
 use App\Models\Post\Category;
 
 $factory->define(Category::class, function (Faker $faker) {
+
     $name = $faker->sentence;
-    $slug = Str::slug($name);
+
     return [
         'name' => $name,
-        'slug' => $slug,
-        'body' => $faker->text(40),
+        'slug' => Str::slug($name),
+        'body' => $faker->text(100),
     ];
 });
